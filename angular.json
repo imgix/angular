@@ -37,6 +37,124 @@
           }
         }
       }
+    },
+    "ng-imgix-example": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ng-imgix-example",
+      "sourceRoot": "projects/ng-imgix-example/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-imgix-example",
+            "index": "projects/ng-imgix-example/src/index.html",
+            "main": "projects/ng-imgix-example/src/main.ts",
+            "polyfills": "projects/ng-imgix-example/src/polyfills.ts",
+            "tsConfig": "projects/ng-imgix-example/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/ng-imgix-example/src/favicon.ico",
+              "projects/ng-imgix-example/src/assets"
+            ],
+            "styles": [
+              "projects/ng-imgix-example/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-imgix-example/src/environments/environment.ts",
+                  "with": "projects/ng-imgix-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-imgix-example:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-imgix-example:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-imgix-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-imgix-example/src/test.ts",
+            "polyfills": "projects/ng-imgix-example/src/polyfills.ts",
+            "tsConfig": "projects/ng-imgix-example/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-imgix-example/karma.conf.js",
+            "assets": [
+              "projects/ng-imgix-example/src/favicon.ico",
+              "projects/ng-imgix-example/src/assets"
+            ],
+            "styles": [
+              "projects/ng-imgix-example/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-imgix-example/tsconfig.app.json",
+              "projects/ng-imgix-example/tsconfig.spec.json",
+              "projects/ng-imgix-example/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-imgix-example/e2e/protractor.conf.js",
+            "devServerTarget": "ng-imgix-example:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-imgix-example:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "ng-imgix"
 }
