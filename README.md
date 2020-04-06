@@ -16,7 +16,7 @@ One-liner: `$ cd dist/ng-imgix && npm link`
 - In a separate directory, create a new Angular application using `ng new example-app`. This is where `ng-imgix` can be tested.
 One-liner: `$ cd ../../../ && ng new example-app`
 - In this example app, run `npm link ng-imgix`. This allows `ng-imgix` to be used within the application.  
-One-liner: `$ npm link ng-imgix`
+One-liner: `$ cd example-app && npm link ng-imgix`
 - Modify the application's `app.module.ts` to import `ng-imgix`:
 
 ```ts
