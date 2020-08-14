@@ -1,15 +1,24 @@
+dist: trusty
+sudo: false
+
 language: node_js
-
-before_install:
-  - npm install -g npm@latest
-
-install:
-  - npm install
-
 node_js:
   - '10.9'
   - '12.0'
   - '13.0'
 
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - ./node_modules
+
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+
+install:
+  - npm install
+
 script:
-  - ng test
+  - ng test ng-imgix --no-watch --no-progress --browsers=ChromeHeadlessCI
