@@ -9,6 +9,7 @@ node_js:
 
 addons:
   chrome: stable
+  firefox: latest
 
 cache:
   directories:
@@ -21,4 +22,4 @@ install:
   - npm install
 
 script:
-  - ng test ng-imgix --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - npm run test-headless
