@@ -26,6 +26,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
+    failOnEmptyTestSuite: true,
     browsers: ['Chrome', 'ChromeHeadlessCI', 'FirefoxHeadless'],
     customLaunchers: {
       ChromeHeadlessCI: {
