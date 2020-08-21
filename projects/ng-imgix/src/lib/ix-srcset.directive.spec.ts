@@ -100,4 +100,8 @@ describe('The ixSrcset attribute directive', () => {
   it('should not create a srcset on any untagged <img> elements', () => {
     expect(bareImg.attributes.srcset).toBeUndefined();
   });
+
+  it('should fail', () => {
+    expect(false).toBeTruthy();
+  })
 });
