@@ -7,6 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "test-headless": "ng test ng-imgix --no-watch --no-progress --browsers=ChromeHeadlessCI,FirefoxHeadless",
+    "pretty": "prettier --write 'projects/**/*.ts'",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -45,6 +46,7 @@
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "1.5.2",
     "ng-packagr": "5.7.1",
+    "prettier": "^2.1.1",
     "protractor": "5.4.3",
     "ts-node": "9.0.0",
     "tsickle": "0.37.1",
