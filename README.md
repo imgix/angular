@@ -1,6 +1,9 @@
 ![imgix logo](https://assets.imgix.net/sdk-imgix-logo.svg)
 
 # ng-imgix
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+---
 
 ## Installation
 
