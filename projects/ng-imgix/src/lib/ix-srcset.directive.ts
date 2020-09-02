@@ -5,7 +5,7 @@ import ImgixClient from 'imgix-core-js';
 
 @Directive({
   // tslint:disable-next-line: directive-selector
-  selector: '[ixSrcset]'
+  selector: '[ixSrcset]',
 })
 export class IxSrcsetDirective implements OnInit {
   settings: any = {};
@@ -15,9 +15,11 @@ export class IxSrcsetDirective implements OnInit {
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
-    const {hostname, path, baseParameters} = this.extractURLComponents(this.el.nativeElement.src);
+    const { hostname, path, baseParameters } = this.extractURLComponents(
+      this.el.nativeElement.src,
+    );
     this.settings = {
-      domain: hostname
+      domain: hostname,
     };
 
     const imgix = new ImgixClient(this.settings);
@@ -26,7 +28,11 @@ export class IxSrcsetDirective implements OnInit {
     if (!this.el.nativeElement.sizes) {
       this.el.nativeElement.sizes = '100vw';
     }
-    this.el.nativeElement.srcset = imgix.buildSrcSet(path, baseParameters, this.srcsetOptions);
+    this.el.nativeElement.srcset = imgix.buildSrcSet(
+      path,
+      baseParameters,
+      this.srcsetOptions,
+    );
   }
 
   private extractURLComponents = (url: string) => {
@@ -48,6 +54,6 @@ export class IxSrcsetDirective implements OnInit {
       }
     }
 
-    return {hostname, path, baseParameters};
-  }
+    return { hostname, path, baseParameters };
+  };
 }
