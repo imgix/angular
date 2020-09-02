@@ -5,14 +5,9 @@ import { AppComponent } from './app.component';
 import { NgImgixModule } from 'ng-imgix';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgImgixModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, NgImgixModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

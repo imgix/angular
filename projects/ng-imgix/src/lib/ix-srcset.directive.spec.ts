@@ -6,18 +6,26 @@ import { By } from '@angular/platform-browser';
 const VERSION = require('../../package.json').version;
 
 export class MockElementRef extends ElementRef {
-  constructor() { super(null); }
+  constructor() {
+    super(null);
+  }
 }
 
 @Component({
   template: `
-  <img src="https://assets.imgix.net/examples/bluehat.jpg" />
-  <img src="https://assets.imgix.net/unsplash/motorbike.jpg" [ixSrcset]="{ minWidth: 800, maxWidth: 1200 }" />
-  <img src="https://assets.imgix.net/unsplash/bridge.jpg?w=500" ixSrcset />
-  <img src="https://assets.imgix.net/unsplash/raspberries.jpg?w=1000" [ixSrcset]="{ disableVariableQuality: true }" />
-  `
+    <img src="https://assets.imgix.net/examples/bluehat.jpg" />
+    <img
+      src="https://assets.imgix.net/unsplash/motorbike.jpg"
+      [ixSrcset]="{ minWidth: 800, maxWidth: 1200 }"
+    />
+    <img src="https://assets.imgix.net/unsplash/bridge.jpg?w=500" ixSrcset />
+    <img
+      src="https://assets.imgix.net/unsplash/raspberries.jpg?w=1000"
+      [ixSrcset]="{ disableVariableQuality: true }"
+    />
+  `,
 })
-class TestComponent { }
+class TestComponent {}
 
 describe('The IxSrcsetDirective class', () => {
   const directive = new IxSrcsetDirective(new MockElementRef());
@@ -42,9 +50,8 @@ describe('The ixSrcset attribute directive', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      declarations: [ IxSrcsetDirective, TestComponent ]
-    })
-    .createComponent(TestComponent);
+      declarations: [IxSrcsetDirective, TestComponent],
+    }).createComponent(TestComponent);
 
     fixture.detectChanges(); // initial binding
 
@@ -74,13 +81,13 @@ describe('The ixSrcset attribute directive', () => {
   });
 
   it('should create a srcset attribute when used', () => {
-    des.map(el => {
+    des.map((el) => {
       expect(el.nativeElement.srcset).toBeTruthy();
     });
   });
 
   it('should create a fluid srcset if no width is provided', () => {
-    des.map(el => {
+    des.map((el) => {
       if (FLUID_IMG_PATTERN.exec(el.nativeElement.src)) {
         const srcset = el.nativeElement.srcset;
         expect(FLUID_SRCSET_PATTERN.exec(srcset)).toBeTruthy();
@@ -89,7 +96,7 @@ describe('The ixSrcset attribute directive', () => {
   });
 
   it('should create a fixed srcset if a width is provided', () => {
-    des.map(el => {
+    des.map((el) => {
       if (FIXED_IMG_PATTERN.exec(el.nativeElement.src)) {
         const srcset = el.nativeElement.srcset;
         expect(FIXED_SRCSET_PATTERN.exec(srcset)).toBeTruthy();
