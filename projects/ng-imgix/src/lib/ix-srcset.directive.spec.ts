@@ -47,6 +47,7 @@ describe('The ixSrcset attribute directive', () => {
   let FLUID_SRCSET_PATTERN;
   let FIXED_IMG_PATTERN;
   let FIXED_SRCSET_PATTERN;
+  let IXLIB_PATTERN;
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
@@ -74,6 +75,9 @@ describe('The ixSrcset attribute directive', () => {
 
     // the expected patten for fixed srcset, e.g. '...?dpr=2 2x,'
     FIXED_SRCSET_PATTERN = /(?:[\w:\/\-.&=?])+ \dx/;
+
+    // used to test for the existence of an ixlib query parameter
+    IXLIB_PATTERN = /ixlib=ng-\d+\.\d+\.\d+/;
   });
 
   it('should be reflected on any elements it is attached to', () => {
@@ -106,5 +110,11 @@ describe('The ixSrcset attribute directive', () => {
 
   it('should not create a srcset on any untagged <img> elements', () => {
     expect(bareImg.attributes.srcset).toBeUndefined();
+  });
+
+  it('should have an ixlib parameter appended by default', () => {
+    des.map((el) => {
+      expect(IXLIB_PATTERN.exec(el.nativeElement.srcset)).toBeTruthy();
+    });
   });
 });
