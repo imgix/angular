@@ -1,6 +1,5 @@
 import { Directive, Input, ElementRef, OnInit } from '@angular/core';
 
-const PKG_VERSION = require('../../package.json').version;
 import URI from 'urijs';
 import ImgixClient from 'imgix-core-js';
 
@@ -11,7 +10,7 @@ import ImgixClient from 'imgix-core-js';
 export class IxSrcsetDirective implements OnInit {
   settings: any = {};
   @Input('ixSrcset') srcsetOptions: any = {};
-  VERSION = PKG_VERSION;
+  VERSION = '0.0.1';
 
   constructor(private el: ElementRef) {}
 
@@ -24,7 +23,7 @@ export class IxSrcsetDirective implements OnInit {
     };
 
     const imgix = new ImgixClient(this.settings);
-    (imgix as any).settings.libraryParam = `ng-${this.VERSION}`;
+    imgix['settings'].libraryParam = `ng-${this.VERSION}`;
 
     if (!this.el.nativeElement.sizes) {
       this.el.nativeElement.sizes = '100vw';
