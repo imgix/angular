@@ -23,3 +23,11 @@ install:
 
 script:
   - npm run test-headless
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - cd projects/ng-imgix && npx semantic-release
+  on:
+    branch: next
