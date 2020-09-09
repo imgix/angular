@@ -23,7 +23,7 @@ export class IxSrcsetDirective implements OnInit {
     };
 
     const imgix = new ImgixClient(this.settings);
-    imgix['settings'].libraryParam = `ng-${this.VERSION}`;
+    (imgix as any).settings.libraryParam = `ng-${this.VERSION}`;
 
     if (!this.el.nativeElement.sizes) {
       this.el.nativeElement.sizes = '100vw';
