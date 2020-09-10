@@ -51,7 +51,7 @@
         {
           "assets": [
             "src/**",
-            "../../dist/ng-imgix/**",
+            "dist/**",
             "package.json",
             "CHANGELOG.md"
           ],
@@ -63,7 +63,7 @@
         {
           "assets": [
             {
-              "path": "../../dist/ng-imgix/bundles/ng-imgix.umd.min.js",
+              "path": "dist/bundles/ng-imgix.umd.min.js",
               "label": "Standalone browser build"
             }
           ]
