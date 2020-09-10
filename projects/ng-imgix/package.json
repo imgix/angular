@@ -9,17 +9,30 @@
     "imgix-core-js": "2.3.1",
     "urijs": "1.19.2"
   },
+  "devDependencies": {
+    "@google/semantic-release-replace-plugin": "^1.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0"
+  },
   "release": {
     "branches": [
       "main",
-      { "name": "next", "prerelease": "rc" },
-      { "name": "beta", "prerelease": true },
-      { "name": "alpha", "prerelease": true }
+      {
+        "name": "next",
+        "prerelease": "rc"
+      },
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-
       [
         "@google/semantic-release-replace-plugin",
         {
@@ -43,7 +56,6 @@
           ]
         }
       ],
-
       "@semantic-release/changelog",
       "@semantic-release/npm",
       [
