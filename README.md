@@ -14,8 +14,9 @@ NB: Each step has an accompanied one-liner. If these commands are pasted one aft
 One-liner: `$ git clone git@github.com:imgix/ng-imgix.git`
 - Build the `ng-imgix` library using `ng build ng-imgix`. Note that the newly bundled files can be found under `dist/ng-imgix`.  
 One-liner: `$ cd ng-imgix && npm install && ng build ng-imgix`
-- Navigate to `dist/ng-imgix` within `ng-imgix` and run `npm link`.  
-One-liner: `$ cd dist/ng-imgix && npm link`
+One-liner (w/o global cli): `$ cd ng-imgix && npm install && npx -p @angular/cli ng build ng-imgix`
+- Navigate to `projects/ng-imgix/dist/` and run `npm link`.  
+One-liner: `$ cd projects/ng-imgix/dist && npm link`
 - In a separate directory, create a new Angular application using `ng new example-app`. This is where `ng-imgix` can be tested.
 One-liner: `$ cd ../../../ && ng new example-app`
 - In this example app, run `npm link ng-imgix`. This allows `ng-imgix` to be used within the application.  
