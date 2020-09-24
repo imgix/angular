@@ -11,6 +11,7 @@ addons:
   firefox: latest
 
 cache:
+  yarn: true
   directories:
     - ./node_modules
 
@@ -18,10 +19,10 @@ before_install:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 install:
-  - npm install
+  - yarn
 
 script:
-  - npm run test-headless
+  - yarn run test-headless
 
 deploy:
   provider: script
