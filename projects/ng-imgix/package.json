@@ -82,5 +82,8 @@
         }
       ]
     ]
+  },
+  "devDependencies": {
+    "@testing-library/angular": "^10.0.2"
   }
 }
