@@ -82,13 +82,13 @@ Generates a more tailored attribute:
   src="https://assets.imgix.net/unsplash/motorbike.jpg"
   sizes="100vw"
   srcset="
-    https://assets.imgix.net/unsplash/motorbike.jpg?w=800&amp;ixlib=ng-0.0.1   800w,
-    https://assets.imgix.net/unsplash/motorbike.jpg?w=928&amp;ixlib=ng-0.0.1   928w,
-    https://assets.imgix.net/unsplash/motorbike.jpg?w=1076&amp;ixlib=ng-0.0.1 1076w,
-    https://assets.imgix.net/unsplash/motorbike.jpg?w=1248&amp;ixlib=ng-0.0.1 1248w,
-    https://assets.imgix.net/unsplash/motorbike.jpg?w=1448&amp;ixlib=ng-0.0.1 1448w,
-    https://assets.imgix.net/unsplash/motorbike.jpg?w=1680&amp;ixlib=ng-0.0.1 1680w,
-    https://assets.imgix.net/unsplash/motorbike.jpg?w=1800&amp;ixlib=ng-0.0.1 1800w
+    https://assets.imgix.net/unsplash/motorbike.jpg?w=800&ixlib=ng-0.0.1 800w,
+    https://assets.imgix.net/unsplash/motorbike.jpg?w=928&ixlib=ng-0.0.1 928w,
+    https://assets.imgix.net/unsplash/motorbike.jpg?w=1076&ixlib=ng-0.0.1 1076w,
+    https://assets.imgix.net/unsplash/motorbike.jpg?w=1248&ixlib=ng-0.0.1 1248w,
+    https://assets.imgix.net/unsplash/motorbike.jpg?w=1448&ixlib=ng-0.0.1 1448w,
+    https://assets.imgix.net/unsplash/motorbike.jpg?w=1680&ixlib=ng-0.0.1 1680w,
+    https://assets.imgix.net/unsplash/motorbike.jpg?w=1800&ixlib=ng-0.0.1 1800w
   "
 />
 ```
