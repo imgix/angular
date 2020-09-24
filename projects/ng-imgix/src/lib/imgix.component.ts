@@ -1,23 +1,24 @@
-import {
-  Component,
-  Inject,
-  Injectable,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import { ImgixConfigService } from './imgix-config.service';
+import { Component, Inject, Injectable, Input } from '@angular/core';
+import ImgixClient from 'imgix-core-js';
+import { ImgixConfig, ImgixConfigService } from './imgix-config.service';
 
 @Injectable()
 @Component({
   selector: 'ix-img',
-  template: `<img [src]="src" />`, // TODO: add srcset
+  template: `<img [src]="srcURL" />`, // TODO: add srcset
 })
-export class ImgixComponent implements OnInit, OnDestroy {
-  constructor(@Inject(ImgixConfigService) private config) {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+export class ImgixComponent {
+  private readonly client;
+
+  @Input() src: string;
+
+  constructor(@Inject(ImgixConfigService) config: ImgixConfig) {
+    this.client = new ImgixClient({
+      domain: config.domain,
+    });
   }
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+
+  get srcURL(): string {
+    return this.client.buildURL(this.src);
   }
 }
