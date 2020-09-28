@@ -158,4 +158,29 @@ describe('Imgix Component', () => {
 
     expect(test.getComponent().getAttribute('class')).toBe('img-class');
   });
+
+  describe('type guards', () => {
+    const TEST_CASES: [
+      html: string,
+      attribute: string,
+      expectedValue: string,
+    ][] = [
+      [`width="100"`, 'width', '100'],
+      [`width=100`, 'width', '100'],
+      [`[width]="100"`, 'width', '100'],
+      [`height="100"`, 'height', '100'],
+      [`height=100`, 'height', '100'],
+      [`[height]="100"`, 'height', '100'],
+    ];
+
+    TEST_CASES.map(([html, attribute, expectedValue]) => {
+      it(`${attribute} should be ${expectedValue} when the html attribute is ${html}`, async () => {
+        const test = await renderImgTemplate(
+          `<ix-img src="amsterdam.jpg" ${html}></ix-img>`,
+        );
+
+        expect(test.getComponent().getAttribute(attribute)).toBe(expectedValue);
+      });
+    });
+  });
 });
