@@ -4,6 +4,10 @@ import {
   RenderComponentOptions,
   screen,
 } from '@testing-library/angular';
+import {
+  expectElementToHaveFixedSrcAndSrcSet,
+  expectElementToHaveFluidSrcAndSrcSet,
+} from '../test/url-assert';
 import { ImgixConfig } from './imgix-config.service';
 import { ImgixComponent } from './imgix.component';
 import { NgImgixModule } from './ng-imgix.module';
@@ -181,6 +185,123 @@ describe('Imgix Component', () => {
 
         expect(test.getComponent().getAttribute(attribute)).toBe(expectedValue);
       });
+    });
+  });
+
+  describe('in fluid mode (no fixed props set)', () => {
+    it('ix-img should render a fluid image if width is passed as attribute with no fixed attribute', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" width="100" ></ix-img>`,
+      );
+
+      expectElementToHaveFluidSrcAndSrcSet(test.getComponent());
+      expect(test.getComponent().getAttribute('width')).toBe('100');
+    });
+    it('ix-img should render a fluid image if width is passed as attribute with fixed="false" attribute', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" width="100" fixed="false"></ix-img>`,
+      );
+
+      expectElementToHaveFluidSrcAndSrcSet(test.getComponent());
+      expect(test.getComponent().getAttribute('width')).toBe('100');
+    });
+    it('ix-img should render a fluid image if width is passed as attribute with [fixed]="false" attribute', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" width="100" fixed="false"></ix-img>`,
+      );
+
+      expectElementToHaveFluidSrcAndSrcSet(test.getComponent());
+      expect(test.getComponent().getAttribute('width')).toBe('100');
+    });
+    it('a width attribute should be passed through to the underlying component', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" width="100"></ix-img>`,
+      );
+      expect(test.getComponent().getAttribute('width')).toBe('100');
+    });
+    it('a width attribute should not be set on the underlying component if width is not passed', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg"></ix-img>`,
+      );
+      expect(test.getComponent().hasAttribute('width')).toBe(false);
+    });
+    it('a height attribute should be passed through to the underlying component', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" height="100"></ix-img>`,
+      );
+      expect(test.getComponent().getAttribute('height')).toBe('100');
+    });
+    it('a height attribute should not be set on the underlying component if height is not passed', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg"></ix-img>`,
+      );
+      expect(test.getComponent().hasAttribute('height')).toBe(false);
+    });
+  });
+
+  describe('in fixed mode (fixed prop set, or width/height passed to imgixParams)', () => {
+    it('the src and srcset should be in fixed size mode when a width is passed to imgixParams', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" [imgixParams]="{w: 100}" ></ix-img>`,
+      );
+
+      expectElementToHaveFixedSrcAndSrcSet(test.getComponent(), 100);
+    });
+    it('the src and srcset should be in fixed size mode when a fixed prop is passed to the element', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" width="100" height="150" fixed></ix-img>`,
+      );
+
+      const el = test.getComponent();
+      expectElementToHaveFixedSrcAndSrcSet(el, 100);
+
+      expect(el.getAttribute('src')).toEqual(jasmine.stringMatching('w=100'));
+      expect(el.getAttribute('srcset')).toEqual(
+        jasmine.stringMatching('w=100'),
+      );
+      expect(el.getAttribute('src')).toEqual(jasmine.stringMatching('h=150'));
+      expect(el.getAttribute('srcset')).toEqual(
+        jasmine.stringMatching('h=150'),
+      );
+    });
+    it('the src and srcset should be in fixed size mode when a fixed="true" prop is passed to the element', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" width="100" height="150" fixed="true"></ix-img>`,
+      );
+
+      const el = test.getComponent();
+      expectElementToHaveFixedSrcAndSrcSet(el, 100);
+
+      expect(el.getAttribute('src')).toEqual(jasmine.stringMatching('h=150'));
+      expect(el.getAttribute('srcset')).toEqual(
+        jasmine.stringMatching('h=150'),
+      );
+    });
+    it('the src and srcset should be in fixed size mode when a [fixed]="true" prop is passed to the element', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" width="100" height="150" [fixed]="true"></ix-img>`,
+      );
+
+      const el = test.getComponent();
+      expectElementToHaveFixedSrcAndSrcSet(el, 100);
+
+      expect(el.getAttribute('src')).toEqual(jasmine.stringMatching('h=150'));
+      expect(el.getAttribute('srcset')).toEqual(
+        jasmine.stringMatching('h=150'),
+      );
+    });
+
+    it('a width attribute should be passed through to the underlying component', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" width="100" fixed></ix-img>`,
+      );
+      expect(test.getComponent().getAttribute('width')).toBe('100');
+    });
+    it('a height attribute should be passed through to the underlying component', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" height="100" fixed></ix-img>`,
+      );
+      expect(test.getComponent().getAttribute('height')).toBe('100');
     });
   });
 });
