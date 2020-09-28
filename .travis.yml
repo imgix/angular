@@ -2,9 +2,7 @@ dist: trusty
 
 language: node_js
 node_js:
-  - '10.20'
-  - '12.0'
-  - '13.0'
+  - stable
 
 addons:
   chrome: stable
