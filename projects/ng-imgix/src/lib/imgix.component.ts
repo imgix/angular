@@ -13,7 +13,13 @@ import { ImgixConfig, ImgixConfigService } from './imgix-config.service';
 @Component({
   // the [src] means that src is required
   selector: 'ix-img[src]',
-  template: `<img [src]="srcURL" [srcset]="srcsetURL" #v />`,
+  template: `<img
+    [attr.src]="srcURL"
+    [attr.srcset]="srcsetURL"
+    [attr.height]="height"
+    [attr.width]="width"
+    #v
+  />`,
 })
 export class ImgixComponent {
   private readonly client: ImgixClient;
@@ -22,7 +28,23 @@ export class ImgixComponent {
   v?: ElementRef<HTMLImageElement>;
 
   @Input() src: string;
-  @Input() fixed?: boolean;
+  @Input()
+  get fixed(): boolean {
+    return this._fixed;
+  }
+  set fixed(_fixed: boolean) {
+    this._fixed = false;
+    const fixed = _fixed as unknown;
+    if (
+      (typeof fixed === 'string' &&
+        (fixed.trim() === '' || fixed.trim() === 'true')) ||
+      (typeof fixed === 'boolean' && fixed === true)
+    ) {
+      this._fixed = true;
+    }
+  }
+  private _fixed: boolean = false;
+
   @Input() imgixParams?: Object;
 
   @Input()
@@ -89,8 +111,15 @@ export class ImgixComponent {
     );
   }
 
-  private buildIxParams(ixParams?: {}) {
+  private buildIxParams() {
+    const imgixParamsFromImgAttributes = {
+      ...(this.fixed && {
+        ...(this.width != null ? { w: this.width } : {}),
+        ...(this.height != null ? { h: this.height } : {}),
+      }),
+    };
     return {
+      ...imgixParamsFromImgAttributes,
       ...this.imgixParams,
     };
   }
