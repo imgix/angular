@@ -1,4 +1,5 @@
 import {
+  AfterViewChecked,
   Component,
   ElementRef,
   Inject,
@@ -13,15 +14,9 @@ import { ImgixConfig, ImgixConfigService } from './imgix-config.service';
 @Component({
   // the [src] means that src is required
   selector: 'ix-img[src]',
-  template: `<img
-    [attr.src]="srcURL"
-    [attr.srcset]="srcsetURL"
-    [attr.height]="height"
-    [attr.width]="width"
-    #v
-  />`,
+  template: `<img [attr.height]="height" [attr.width]="width" #v />`,
 })
-export class ImgixComponent {
+export class ImgixComponent implements AfterViewChecked {
   private readonly client: ImgixClient;
 
   @ViewChild('v', { static: false })
@@ -89,7 +84,7 @@ export class ImgixComponent {
   }
   private _height: number | undefined;
 
-  @Input() attributeConfig?: Object;
+  @Input() attributeConfig?: { src?: string; srcset?: string };
   @Input() disableVariableQuality?: boolean;
 
   @Input() htmlAttributes?: Object;
@@ -100,8 +95,9 @@ export class ImgixComponent {
     });
   }
 
-  ngAfterViewInit() {
+  ngAfterViewChecked() {
     this.setHTMLAttributes();
+    this.setSrcAndSrcsetAttributes();
   }
 
   private setHTMLAttributes() {
@@ -122,6 +118,12 @@ export class ImgixComponent {
       ...imgixParamsFromImgAttributes,
       ...this.imgixParams,
     };
+  }
+
+  private setSrcAndSrcsetAttributes() {
+    const el = this.v.nativeElement;
+    el.setAttribute(this.attributeConfig?.src ?? 'src', this.srcURL);
+    el.setAttribute(this.attributeConfig?.srcset ?? 'srcset', this.srcsetURL);
   }
 
   get srcURL(): string {
