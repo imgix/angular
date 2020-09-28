@@ -108,6 +108,26 @@ describe('Imgix Component', () => {
     ).toMatch('https://assets.imgix.net/amsterdam.jpg');
   });
 
+  it('should set srcset correctly', async () => {
+    const srcset = (
+      await renderImgTemplate(`<ix-img src='amsterdam.jpg'></ix-img>`)
+    )
+      .getComponent()
+      .getAttribute('srcset');
+
+    expect(srcset).not.toBeFalsy();
+    if (!srcset) {
+      fail('srcset is null');
+    }
+
+    const firstSrcSet = srcset.split(',').map((v) => v.trim())[0];
+    expect(firstSrcSet.split(' ').length).toBe(2);
+    const aSrcFromSrcSet = firstSrcSet.split(' ')[0];
+    expect(aSrcFromSrcSet).toContain('amsterdam.jpg');
+    const aWidthFromSrcSet = firstSrcSet.split(' ')[1];
+    expect(aWidthFromSrcSet).toMatch(/^\d+w$/);
+  });
+
   it('should set imgix params on the src', async () => {
     expect(
       (
@@ -117,6 +137,18 @@ describe('Imgix Component', () => {
       )
         .getComponent()
         .getAttribute('src'),
+    ).toMatch('txt=Hello');
+  });
+
+  it('should set imgix params on the srcset', async () => {
+    expect(
+      (
+        await renderImgTemplate(
+          `<ix-img src='amsterdam.jpg' [imgixParams]="{txt: 'Hello'}"></ix-img>`,
+        )
+      )
+        .getComponent()
+        .getAttribute('srcset'),
     ).toMatch('txt=Hello');
   });
 
