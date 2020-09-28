@@ -54,7 +54,7 @@ export class ImgixComponent {
   set width(_width: number | undefined) {
     this._width = undefined;
 
-    const width = _width as unknown; // Using any for type safety
+    const width = _width as unknown; // Using unknown for type safety
 
     if (typeof width === 'string') {
       const widthParsed = Number.parseFloat(width);
@@ -75,7 +75,7 @@ export class ImgixComponent {
   set height(_height: number | undefined) {
     this._height = undefined;
 
-    const height = _height as unknown; // Using any for type safety
+    const height = _height as unknown; // Using unknown for type safety
 
     if (typeof height === 'string') {
       const heightParsed = Number.parseFloat(height);
