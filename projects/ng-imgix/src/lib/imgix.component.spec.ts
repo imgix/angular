@@ -304,4 +304,20 @@ describe('Imgix Component', () => {
       expect(test.getComponent().getAttribute('height')).toBe('100');
     });
   });
+
+  describe('attributeConfig', () => {
+    const ATTRIBUTES = ['src', 'srcset'];
+    ATTRIBUTES.forEach((attribute) => {
+      it(`${attribute} can be configured to use data-${attribute}`, async () => {
+        const test = await renderImgTemplate(
+          `<ix-img src="amsterdam.jpg" [attributeConfig]="{'${attribute}': 'data-${attribute}'}" ></ix-img>`,
+        );
+
+        expect(test.getComponent().getAttribute(`data-${attribute}`)).toMatch(
+          /ixlib/,
+        );
+        expect(test.getComponent().hasAttribute(attribute)).toBe(false);
+      });
+    });
+  });
 });
