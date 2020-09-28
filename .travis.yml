@@ -29,3 +29,9 @@ deploy:
     - cd projects/ng-imgix && npx semantic-release
   on:
     branch: next
+
+branches:
+  only:
+    - main
+    - next
+    - /^v.*$/
