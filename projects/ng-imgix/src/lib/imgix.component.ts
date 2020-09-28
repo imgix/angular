@@ -24,8 +24,49 @@ export class ImgixComponent {
   @Input() src: string;
   @Input() fixed?: boolean;
   @Input() imgixParams?: Object;
-  @Input() width?: string | number;
-  @Input() height?: string | number;
+
+  @Input()
+  get width(): number | undefined {
+    return this._width;
+  }
+  set width(_width: number | undefined) {
+    this._width = undefined;
+
+    const width = _width as unknown; // Using any for type safety
+
+    if (typeof width === 'string') {
+      const widthParsed = Number.parseFloat(width);
+      if (!Number.isNaN(widthParsed)) {
+        this._width = widthParsed;
+      }
+    }
+    if (typeof width === 'number' && !Number.isNaN(width)) {
+      this._width = width;
+    }
+  }
+  private _width: number | undefined;
+
+  @Input()
+  get height(): number | undefined {
+    return this._height;
+  }
+  set height(_height: number | undefined) {
+    this._height = undefined;
+
+    const height = _height as unknown; // Using any for type safety
+
+    if (typeof height === 'string') {
+      const heightParsed = Number.parseFloat(height);
+      if (!Number.isNaN(heightParsed)) {
+        this._height = heightParsed;
+      }
+    }
+    if (typeof height === 'number' && !Number.isNaN(height)) {
+      this._height = height;
+    }
+  }
+  private _height: number | undefined;
+
   @Input() attributeConfig?: Object;
   @Input() disableVariableQuality?: boolean;
 
