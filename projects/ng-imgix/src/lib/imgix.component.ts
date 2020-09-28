@@ -13,7 +13,7 @@ import { ImgixConfig, ImgixConfigService } from './imgix-config.service';
 @Component({
   // the [src] means that src is required
   selector: 'ix-img[src]',
-  template: `<img [src]="srcURL" #v />`, // TODO: add srcset
+  template: `<img [src]="srcURL" [srcset]="srcsetURL" #v />`,
 })
 export class ImgixComponent {
   private readonly client: ImgixClient;
@@ -48,7 +48,16 @@ export class ImgixComponent {
     );
   }
 
+  private buildIxParams(ixParams?: {}) {
+    return {
+      ...this.imgixParams,
+    };
+  }
+
   get srcURL(): string {
-    return this.client.buildURL(this.src, this.imgixParams);
+    return this.client.buildURL(this.src, this.buildIxParams());
+  }
+  get srcsetURL(): string {
+    return this.client.buildSrcSet(this.src, this.buildIxParams());
   }
 }
