@@ -85,7 +85,24 @@ export class ImgixComponent implements AfterViewChecked {
   private _height: number | undefined;
 
   @Input() attributeConfig?: { src?: string; srcset?: string };
-  @Input() disableVariableQuality?: boolean;
+  @Input()
+  get disableVariableQuality(): boolean {
+    return this._disableVariableQuality;
+  }
+  set disableVariableQuality(_disableVariableQuality: boolean) {
+    this._disableVariableQuality = false;
+    const disableVariableQuality = _disableVariableQuality as unknown;
+    if (
+      (typeof disableVariableQuality === 'string' &&
+        (disableVariableQuality.trim() === '' ||
+          disableVariableQuality.trim() === 'true')) ||
+      (typeof disableVariableQuality === 'boolean' &&
+        disableVariableQuality === true)
+    ) {
+      this._disableVariableQuality = true;
+    }
+  }
+  private _disableVariableQuality: boolean = false;
 
   @Input() htmlAttributes?: Object;
 
@@ -130,6 +147,8 @@ export class ImgixComponent implements AfterViewChecked {
     return this.client.buildURL(this.src, this.buildIxParams());
   }
   get srcsetURL(): string {
-    return this.client.buildSrcSet(this.src, this.buildIxParams());
+    return this.client.buildSrcSet(this.src, this.buildIxParams(), {
+      disableVariableQuality: this.disableVariableQuality,
+    });
   }
 }
