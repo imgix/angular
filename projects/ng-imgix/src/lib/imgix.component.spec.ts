@@ -320,4 +320,31 @@ describe('Imgix Component', () => {
       });
     });
   });
+
+  describe('disableVariableQuality', () => {
+    it('should not disable variable quality by default', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" fixed width="100" height="100"></ix-img>`,
+      );
+
+      const srcset = test.getComponent().getAttribute('srcset');
+
+      const srcsets = srcset.split(',');
+      const getQuality = (srcset) => srcset.match(/q=\d*/)[0].slice(2);
+
+      const firstQuality = getQuality(srcsets[0]);
+      const lastQuality = getQuality(srcsets[srcsets.length - 1]);
+
+      expect(firstQuality).not.toBe(lastQuality);
+    });
+    it('the srcset should have a variable quality when disableVariableQuality attribute set', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" fixed width="100" height="100" disableVariableQuality></ix-img>`,
+      );
+
+      const srcset = test.getComponent().getAttribute('srcset');
+
+      expect(srcset).not.toMatch(/q=/);
+    });
+  });
 });
