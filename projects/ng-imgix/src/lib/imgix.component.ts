@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import ImgixClient from 'imgix-core-js';
 import { ImgixConfig, ImgixConfigService } from './imgix-config.service';
+import { IImgixParams } from './types';
 
 const VERSION: string = '0.0.1';
 
@@ -19,6 +20,7 @@ const VERSION: string = '0.0.1';
   template: `<img [attr.height]="height" [attr.width]="width" #v />`,
 })
 export class ImgixComponent implements AfterViewChecked {
+  config: ImgixConfig;
   private readonly client: ImgixClient;
 
   @ViewChild('v', { static: false })
@@ -109,6 +111,7 @@ export class ImgixComponent implements AfterViewChecked {
   @Input() htmlAttributes?: Object;
 
   constructor(@Inject(ImgixConfigService) config: ImgixConfig) {
+    this.config = config;
     this.client = this.createImgixClient(config);
   }
 
@@ -145,6 +148,7 @@ export class ImgixComponent implements AfterViewChecked {
       }),
     };
     return {
+      ...this.config.defaultImgixParams,
       ...imgixParamsFromImgAttributes,
       ...this.imgixParams,
     };
