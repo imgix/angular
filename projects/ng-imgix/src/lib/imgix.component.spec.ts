@@ -7,6 +7,7 @@ import {
 import {
   expectElementToHaveFixedSrcAndSrcSet,
   expectElementToHaveFluidSrcAndSrcSet,
+  expectURLToHaveIxlibParam,
 } from '../test/url-assert';
 import { ImgixConfig } from './imgix-config.service';
 import { ImgixComponent } from './imgix.component';
@@ -345,6 +346,35 @@ describe('Imgix Component', () => {
       const srcset = test.getComponent().getAttribute('srcset');
 
       expect(srcset).not.toMatch(/q=/);
+    });
+  });
+
+  describe('ixlib param', () => {
+    it(`should be present by default and equal to "ng"`, async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" ></ix-img>`,
+      );
+
+      const expectIxlibParam = expectURLToHaveIxlibParam('ng');
+
+      const component = test.getComponent();
+      expectIxlibParam(component.getAttribute('src'));
+      expectIxlibParam(component.getAttribute('srcset'));
+    });
+
+    it(`should contain the correct package version`, async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" ></ix-img>`,
+      );
+
+      const packageVersion = require('../../package.json').version;
+      const expectIxlibParam = expectURLToHaveIxlibParam(
+        `ng-${packageVersion}`,
+      );
+
+      const component = test.getComponent();
+      expectIxlibParam(component.getAttribute('src'));
+      expectIxlibParam(component.getAttribute('srcset'));
     });
   });
 });

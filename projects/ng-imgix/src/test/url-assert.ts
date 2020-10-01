@@ -52,3 +52,7 @@ export const expectElementToHaveFluidSrcAndSrcSet = (el: HTMLElement) => {
   expectElementToHaveFluidSrc(el);
   expectElementToHaveFluidSrcSet(el);
 };
+
+export const expectURLToHaveIxlibParam = (value: string) => (url: string) => {
+  expect(url).toMatch(`ixlib=${value}`);
+};
