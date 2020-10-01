@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import {
   render,
   RenderComponentOptions,
-  screen,
+  screen
 } from '@testing-library/angular';
 import {
   expectElementToHaveFixedSrcAndSrcSet,
   expectElementToHaveFluidSrcAndSrcSet,
-  expectURLToHaveIxlibParam,
+  expectURLToHaveIxlibParam
 } from '../test/url-assert';
 import { ImgixConfig } from './imgix-config.service';
 import { ImgixComponent } from './imgix.component';
@@ -424,7 +424,7 @@ describe('Imgix Component', () => {
     });
     it('should be overridden by locally set parameters', async () => {
       const test = await renderImgTemplate(
-        `<ix-img src="amsterdam.jpg" txt="Overridden"></ix-img>`,
+        `<ix-img src="amsterdam.jpg" [imgixParams]="{txt: 'Overridden'}"></ix-img>`,
         {
           domain: 'assets.imgix.net',
           defaultImgixParams: {
