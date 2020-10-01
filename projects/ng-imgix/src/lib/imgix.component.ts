@@ -42,7 +42,7 @@ export class ImgixComponent implements AfterViewChecked {
   }
   private _fixed: boolean = false;
 
-  @Input() imgixParams?: Object;
+  @Input() imgixParams?: IImgixParams;
 
   @Input()
   get width(): number | undefined {
