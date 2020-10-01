@@ -376,5 +376,16 @@ describe('Imgix Component', () => {
       expectIxlibParam(component.getAttribute('src'));
       expectIxlibParam(component.getAttribute('srcset'));
     });
+
+    it(`should not be included in src/srcset when includeLibraryParam is false`, async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" ></ix-img>`,
+        { domain: 'assets.imgix.net', includeLibraryParam: false },
+      );
+
+      const component = test.getComponent();
+      expect(component.getAttribute('src')).not.toMatch(/ixlib/);
+      expect(component.getAttribute('srcset')).not.toMatch(/ixlib/);
+    });
   });
 });
