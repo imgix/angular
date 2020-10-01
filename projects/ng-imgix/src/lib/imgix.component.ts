@@ -10,6 +10,8 @@ import {
 import ImgixClient from 'imgix-core-js';
 import { ImgixConfig, ImgixConfigService } from './imgix-config.service';
 
+const VERSION: string = '0.0.1';
+
 @Injectable()
 @Component({
   // the [src] means that src is required
@@ -107,9 +109,20 @@ export class ImgixComponent implements AfterViewChecked {
   @Input() htmlAttributes?: Object;
 
   constructor(@Inject(ImgixConfigService) config: ImgixConfig) {
-    this.client = new ImgixClient({
+    this.client = this.createImgixClient(config);
+  }
+
+  private createImgixClient(config: ImgixConfig): ImgixClient {
+    const client = new ImgixClient({
       domain: config.domain,
+      includeLibraryParam: false,
     });
+
+    if (!(config.includeLibraryParam === false)) {
+      (client as any).settings.libraryParam = `ng-${VERSION}`;
+    }
+
+    return client;
   }
 
   ngAfterViewChecked() {
