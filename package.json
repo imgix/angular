@@ -11,7 +11,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "workspaces": ["projects/*"],
+  "workspaces": [
+    "projects/*"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
@@ -22,18 +24,21 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "imgix-core-js": "^2.3.1",
     "rxjs": "~6.6.0",
     "tslib": "^1.10.0",
-    "urijs": "^1.19.2",
     "zone.js": "~0.10.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^10.0.1",
     "@angular-devkit/build-angular": "0.803.29",
     "@angular-devkit/build-ng-packagr": "0.803.29",
-    "@angular/cli": "8.3.29",
+    "@angular/cli": "8",
     "@angular/compiler-cli": "8.2.14",
     "@angular/language-service": "8.2.14",
+    "@google/semantic-release-replace-plugin": "^1.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@testing-library/angular": "^10.0.2",
     "@types/jasmine": "3.5.14",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "8.9.5",
