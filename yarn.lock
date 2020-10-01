@@ -5395,13 +5395,18 @@ image-size@~0.5.0:
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
   integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
 
-imgix-core-js@2.3.1, imgix-core-js@^2.3.1:
+imgix-core-js@2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/imgix-core-js/-/imgix-core-js-2.3.1.tgz#a511db86eeaff3d73172a018644907bd804bc72f"
   integrity sha512-mmcJpMH7yWgeleUxFO9yQZxYIrG/A+DJnWXUyAqTcTebkwKTHchzGQ0WG85fmyPG0fiD1h8twqoamMzUNk0oiQ==
   dependencies:
     js-base64 "^2.1.9"
     md5 "^2.2.1"
+
+imgix-url-params@^11.8.1:
+  version "11.8.1"
+  resolved "https://registry.yarnpkg.com/imgix-url-params/-/imgix-url-params-11.8.1.tgz#0d52ebf9fcdd3362557e03444d9e1f87ff48f547"
+  integrity sha512-vqEh5AS4GpRviKA5kNir+3Y+NvfR359zXzsDhIZ/GuSqxiRpyiVth70ZUbbD0l0NJTey2Z/aH9JUXT2/bG4jeQ==
 
 immediate@~3.0.5:
   version "3.0.6"

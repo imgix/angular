@@ -18,7 +18,8 @@
       "ng-imgix": ["projects/ng-imgix/dist"],
       "ng-imgix/*": ["dist/ng-imgix/*"]
     },
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
