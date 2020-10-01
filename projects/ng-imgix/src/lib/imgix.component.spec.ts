@@ -388,4 +388,55 @@ describe('Imgix Component', () => {
       expect(component.getAttribute('srcset')).not.toMatch(/ixlib/);
     });
   });
+
+  describe('default parameters', () => {
+    it('should be applied to src', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg"></ix-img>`,
+        {
+          domain: 'assets.imgix.net',
+          defaultImgixParams: {
+            txt: 'Hello',
+          },
+        },
+      );
+
+      const expectedAttribute = jasmine.stringMatching(/txt=Hello/);
+      expect(test.getComponent().getAttribute('src')).toEqual(
+        expectedAttribute,
+      );
+    });
+    it('should be applied to srcset', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg"></ix-img>`,
+        {
+          domain: 'assets.imgix.net',
+          defaultImgixParams: {
+            txt: 'Hello',
+          },
+        },
+      );
+
+      const expectedAttribute = jasmine.stringMatching(/txt=Hello/);
+      expect(test.getComponent().getAttribute('srcset')).toEqual(
+        expectedAttribute,
+      );
+    });
+    it('should be overridden by locally set parameters', async () => {
+      const test = await renderImgTemplate(
+        `<ix-img src="amsterdam.jpg" txt="Overridden"></ix-img>`,
+        {
+          domain: 'assets.imgix.net',
+          defaultImgixParams: {
+            txt: 'Hello',
+          },
+        },
+      );
+
+      const expectedAttribute = jasmine.stringMatching(/txt=Overridden/);
+      expect(test.getComponent().getAttribute('src')).toEqual(
+        expectedAttribute,
+      );
+    });
+  });
 });
