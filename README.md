@@ -156,7 +156,7 @@ For the width and height attributes, they can be any value as long as their aspe
   [htmlAttributes]="{class: 'test-img'}"
   width="66"
   height="100"
-/>
+></ix-img>
 ```
 
 **Aspect Ratio:** A developer can pass a desired aspect ratio, which will be used when
@@ -171,7 +171,7 @@ generating srcsets to resize and crop your image as specified. For the `ar` para
   // It's important to set these attributes to the aspect ratio that we manually specify.
   width="16"
   height="9"
-/>
+></ix-img>
 ```
 <!-- prettier-ignore-end -->
 
@@ -187,7 +187,7 @@ If the fluid, dynamic nature explained above is not desired, the width and heigh
   width="100" // This width and the height below sets what resolution the component should load from the CDN and the size of the resulting image
   height="200"
   fixed
-/>
+></ix-img>
 ```
 
 This will generate an image element like:
@@ -209,7 +209,7 @@ Fixed image rendering will automatically append a variable `q` parameter mapped 
 This behavior will respect any overriding `q` value passed in via `imgixParams` and can be disabled altogether with the boolean property `disableVariableQuality`.
 
 ```html
-<ix-img src="image.jpg" width="100" disableVariableQuality />
+<ix-img src="image.jpg" width="100" disableVariableQuality ></ix-img>
 ```
 
 will generate the following srcset:
@@ -287,7 +287,7 @@ That's all the setup we need to do! Now there's a `lazy-img` directive available
 ```jsx
 <ix-img src="blog/unsplash-kiss.jpg"
 [attributeConfig]="{ src: 'data-src', srcset: 'data-srcset' }" lazy-img
-loading="lazy" />
+loading="lazy" ></ix-img>
 ```
 
 ##### Lazy-loading (Interaction Observer)
@@ -312,7 +312,7 @@ If you'd still like to use an event listener, we recommend using [lazysizes](htt
     src: 'data-src',
     srcSet: 'data-srcset',
   }"
-/>
+></ix-img>
 ```
 
 **NB:** It is recommended to use the [attribute change plugin](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange) in order to capture changes in the data-\* attributes. Without this, changing the props to this library will have no effect on the rendered image.
@@ -332,7 +332,7 @@ In some situations, you might want to pass the generated src and srcset to other
     src: 'data-src', 
     srcset: 'data-srcset' 
   }"
-/>
+></ix-img>
 ```
 
 Which will generate HTML as follows:
@@ -354,7 +354,7 @@ All imgix parameter values (with the exception of auto and ch) can be encoded us
   [imgixParams]="{ 
     txt64: 'Oh hello, world'
   }"
-/>
+></ix-img>
 ```
 
 becomes:
