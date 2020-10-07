@@ -11,6 +11,7 @@
   "whitelistedNonPeerDependencies": [
     "tslib",
     "imgix-core-js",
-    "urijs"
+    "urijs",
+    "imgix-url-params"
   ]
 }
