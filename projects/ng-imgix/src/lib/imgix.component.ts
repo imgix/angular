@@ -20,7 +20,6 @@ const VERSION: string = '0.0.1';
   template: `<img [attr.height]="height" [attr.width]="width" #v />`,
 })
 export class ImgixComponent implements AfterViewChecked {
-  config: ImgixConfig;
   private readonly client: ImgixClient;
 
   @ViewChild('v')
@@ -110,9 +109,8 @@ export class ImgixComponent implements AfterViewChecked {
 
   @Input() htmlAttributes?: Object;
 
-  constructor(@Inject(ImgixConfigService) config: ImgixConfig) {
-    this.config = config;
-    this.client = this.createImgixClient(config);
+  constructor(@Inject(ImgixConfigService) private config: ImgixConfig) {
+    this.client = this.createImgixClient(this.config);
   }
 
   private createImgixClient(config: ImgixConfig): ImgixClient {
