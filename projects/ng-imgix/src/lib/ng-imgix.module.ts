@@ -8,7 +8,7 @@ import { ImgixComponent } from './imgix.component';
 })
 export class NgImgixModule {
   // Using config injection pattern from: https://medium.com/@michelestieven/angular-writing-configurable-modules-69e6ea23ea42
-  static forRoot(config: ImgixConfig): ModuleWithProviders {
+  static forRoot(config: ImgixConfig): ModuleWithProviders<NgImgixModule> {
     return {
       ngModule: NgImgixModule,
       providers: [

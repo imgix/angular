@@ -23,7 +23,7 @@ export class ImgixComponent implements AfterViewChecked {
   config: ImgixConfig;
   private readonly client: ImgixClient;
 
-  @ViewChild('v', { static: false })
+  @ViewChild('v')
   v?: ElementRef<HTMLImageElement>;
 
   @Input() src: string;
