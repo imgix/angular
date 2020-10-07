@@ -166,9 +166,9 @@ describe('Imgix Component', () => {
 
   describe('type guards', () => {
     const TEST_CASES: [
-      html: string,
-      attribute: string,
-      expectedValue: string,
+      /* html:  */string,
+      /* attribute:  */string,
+      /* expectedValue:  */string,
     ][] = [
       [`width="100"`, 'width', '100'],
       [`width=100`, 'width', '100'],
