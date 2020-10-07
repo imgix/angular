@@ -261,7 +261,7 @@ export class LazyloadDirective implements AfterViewChecked {
   private observer: lozad.Observer;
   constructor(private el: ElementRef) {}
   ngAfterViewChecked() {
-    const nativeEl = this.el.nativeElement;
+    const nativeEl = this.el.nativeElement.children[0];
     if (
       isNativeLazyLoadingSupported ||
       nativeEl.getAttribute('data-loaded') === 'true'
