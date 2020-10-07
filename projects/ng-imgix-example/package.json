@@ -1,0 +1,11 @@
+{
+  "name": "ng-imgix-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "BSD-2-Clause",
+  "private": true,
+  "devDependencies": {
+    "@types/lozad": "^1.9.0",
+    "lozad": "^1.16.0"
+  }
+}
