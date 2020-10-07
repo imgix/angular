@@ -1,14 +1,12 @@
 {
   "name": "ng-imgix",
   "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
-  },
+  "license": "BSD-2-Clause",
+  "peerDependencies": {},
   "dependencies": {
     "imgix-core-js": "2.3.1",
-    "imgix-url-params": "^11.8.1",
-    "tslib": "^2.0.0",
+    "imgix-url-params": "^11.9.1",
+    "tslib": "^2.0.2",
     "urijs": "1.19.2"
   },
   "release": {
