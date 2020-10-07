@@ -14,13 +14,13 @@
           "options": {
             "tsConfig": "projects/ng-imgix/tsconfig.lib.json",
             "project": "projects/ng-imgix/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/ng-imgix/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -36,9 +36,7 @@
               "projects/ng-imgix/tsconfig.lib.json",
               "projects/ng-imgix/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -63,9 +61,7 @@
               "projects/ng-imgix-example/src/favicon.ico",
               "projects/ng-imgix-example/src/assets"
             ],
-            "styles": [
-              "projects/ng-imgix-example/src/styles.css"
-            ],
+            "styles": ["projects/ng-imgix-example/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -127,9 +123,7 @@
               "projects/ng-imgix-example/src/favicon.ico",
               "projects/ng-imgix-example/src/assets"
             ],
-            "styles": [
-              "projects/ng-imgix-example/src/styles.css"
-            ],
+            "styles": ["projects/ng-imgix-example/src/styles.css"],
             "scripts": []
           }
         },
@@ -141,9 +135,7 @@
               "projects/ng-imgix-example/tsconfig.spec.json",
               "projects/ng-imgix-example/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -159,6 +151,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-imgix"
+    }
+  },
+  "defaultProject": "ng-imgix",
+  "cli": {
+    "analytics": "91ca18e9-733d-4ac3-8814-d3890ed0d416"
+  }
 }
