@@ -8,6 +8,7 @@
   "dependencies": {
     "imgix-core-js": "2.3.1",
     "imgix-url-params": "^11.8.1",
+    "tslib": "^2.0.0",
     "urijs": "1.19.2"
   },
   "release": {
