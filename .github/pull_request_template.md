@@ -1,5 +1,5 @@
 <!--
-Hello, and thanks for contributing to ng-imgix! 🎉🙌
+Hello, and thanks for contributing to @imgix/ng! 🎉🙌
 Please take a second to fill out PRs with the following template!
 -->
 
@@ -7,7 +7,7 @@ Please take a second to fill out PRs with the following template!
 
 <!-- What is accomplished by this PR? If there is something potentially controversial in your PR, please take a moment to tell us about your choices. -->
 
-<!-- 
+<!--
 Please use the checklist that is most closely related to your PR, and delete the other checklists. -->
 
 ## Checklist: Fixing typos/Doc change

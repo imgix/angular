@@ -2,7 +2,7 @@
 
 ![imgix logo](https://assets.imgix.net/sdk-imgix-logo.svg)
 
-`ng-imgix` is a client library for generating URLs with [imgix](https://www.imgix.com/).
+`@imgix/ng` is a client library for generating URLs with [imgix](https://www.imgix.com/).
 
 [![npm version](https://img.shields.io/npm/v/@imgix/ng.svg)](https://www.npmjs.com/package/@imgix/ng)
 [![Build Status](https://travis-ci.org/imgix/ng-imgix.svg?branch=main)](https://travis-ci.org/imgix/ng-imgix)
@@ -209,7 +209,7 @@ Fixed image rendering will automatically append a variable `q` parameter mapped 
 This behavior will respect any overriding `q` value passed in via `imgixParams` and can be disabled altogether with the boolean property `disableVariableQuality`.
 
 ```html
-<ix-img src="image.jpg" width="100" disableVariableQuality ></ix-img>
+<ix-img src="image.jpg" width="100" disableVariableQuality></ix-img>
 ```
 
 will generate the following srcset:

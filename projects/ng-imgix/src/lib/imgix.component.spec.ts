@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import {
   render,
   RenderComponentOptions,
-  screen
+  screen,
 } from '@testing-library/angular';
 import {
   expectElementToHaveFixedSrcAndSrcSet,
   expectElementToHaveFluidSrcAndSrcSet,
-  expectURLToHaveIxlibParam
+  expectURLToHaveIxlibParam,
 } from '../test/url-assert';
 import { ImgixConfig } from './imgix-config.service';
+import { NgImgixModule } from './imgix-ng.module';
 import { ImgixComponent } from './imgix.component';
-import { NgImgixModule } from './ng-imgix.module';
 
 const createComponent = (template: string) => {
   @Component({
@@ -166,9 +166,9 @@ describe('Imgix Component', () => {
 
   describe('type guards', () => {
     const TEST_CASES: [
-      /* html:  */string,
-      /* attribute:  */string,
-      /* expectedValue:  */string,
+      /* html:  */ string,
+      /* attribute:  */ string,
+      /* expectedValue:  */ string,
     ][] = [
       [`width="100"`, 'width', '100'],
       [`width=100`, 'width', '100'],

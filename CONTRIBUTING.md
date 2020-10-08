@@ -5,23 +5,23 @@ NB: Each step has an accompanied one-liner. If these commands are pasted one aft
 - Ensure your development environment includes all [prerequisites](https://angular.io/guide/setup-local) to build and run Angular applications.
 - Clone this repo  
   One-liner: `$ git clone git@github.com:imgix/ng-imgix.git`
-- Build the `ng-imgix` library using `ng build ng-imgix`. Note that the newly bundled files can be found under `projects/ng-imgix/dist`.  
-  One-liner: `$ cd ng-imgix && npm install && ng build ng-imgix`
-  One-liner (w/o global cli): `$ cd ng-imgix && npm install && npx -p @angular/cli ng build ng-imgix`
-- Navigate to `projects/ng-imgix/dist/` and run `npm link`.  
-  One-liner: `$ cd projects/ng-imgix/dist && npm link`
-- In a separate directory, create a new Angular application using `ng new example-app`. This is where `ng-imgix` can be tested.
+- Build the `@imgix/ng` library using `ng build imgix-ng`. Note that the newly bundled files can be found under `project/imgix-ng/dist`.  
+  One-liner: `$ cd ng-imgix && npm install && ng build imgix-ng`
+  One-liner (w/o global cli): `$ cd ng-imgix && npm install && npx -p @angular/cli ng build imgix-ng`
+- Navigate to `projects/imgix-ng/dist/` and run `npm link`.  
+  One-liner: `$ cd projects/imgix-ng/dist && npm link`
+- In a separate directory, create a new Angular application using `ng new example-app`. This is where `imgix-ng` can be tested.
   One-liner: `$ cd ../../../ && ng new example-app`
-- In this example app, run `npm link ng-imgix`. This allows `ng-imgix` to be used within the application.  
-  One-liner: `$ cd example-app && npm link ng-imgix`
-- Modify the application's `app.module.ts` to import `ng-imgix`:
+- In this example app, run `npm link @imgix/ng`. This allows `@imgix/ng` to be used within the application.  
+  One-liner: `$ cd example-app && npm link @imgix/ng`
+- Modify the application's `app.module.ts` to import `@imgix/ng`:
 
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgImgixModule } from 'ng-imgix';
+import { NgImgixModule } from '@imgix/ng';
 
 @NgModule({
   declarations: [AppComponent],

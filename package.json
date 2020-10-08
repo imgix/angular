@@ -1,12 +1,12 @@
 {
-  "name": "ng-imgix-workspace",
+  "name": "imgix-ng-workspace",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "test-headless": "ng test ng-imgix --no-watch --no-progress --browsers=ChromeHeadlessCI,FirefoxHeadless",
+    "test-headless": "ng test imgix-ng --no-watch --no-progress --browsers=ChromeHeadlessCI,FirefoxHeadless",
     "pretty": "prettier --write 'projects/**/*.ts'",
     "lint": "ng lint",
     "e2e": "ng e2e"

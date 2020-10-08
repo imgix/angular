@@ -1,5 +1,5 @@
 {
-  "name": "ng-imgix",
+  "name": "@imgix/ng",
   "version": "0.0.1",
   "license": "BSD-2-Clause",
   "peerDependencies": {},
@@ -70,7 +70,7 @@
         {
           "assets": [
             {
-              "path": "dist/bundles/ng-imgix.umd.min.js",
+              "path": "dist/bundles/imgix-ng.umd.min.js",
               "label": "Standalone browser build"
             }
           ]
