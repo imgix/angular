@@ -8,6 +8,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import ImgixClient from 'imgix-core-js';
+import { coerceBooleanProperty, coerceNumericProperty } from '../common/ng';
 import { ImgixConfig, ImgixConfigService } from './imgix-config.service';
 import { IImgixParams } from './types';
 
@@ -30,16 +31,8 @@ export class ImgixComponent implements AfterViewChecked {
   get fixed(): boolean {
     return this._fixed;
   }
-  set fixed(_fixed: boolean) {
-    this._fixed = false;
-    const fixed = _fixed as unknown;
-    if (
-      (typeof fixed === 'string' &&
-        (fixed.trim() === '' || fixed.trim() === 'true')) ||
-      (typeof fixed === 'boolean' && fixed === true)
-    ) {
-      this._fixed = true;
-    }
+  set fixed(value: boolean) {
+    this._fixed = coerceBooleanProperty(value as any);
   }
   private _fixed: boolean = false;
 
@@ -50,19 +43,7 @@ export class ImgixComponent implements AfterViewChecked {
     return this._width;
   }
   set width(_width: number | undefined) {
-    this._width = undefined;
-
-    const width = _width as unknown; // Using unknown for type safety
-
-    if (typeof width === 'string') {
-      const widthParsed = Number.parseFloat(width);
-      if (!Number.isNaN(widthParsed)) {
-        this._width = widthParsed;
-      }
-    }
-    if (typeof width === 'number' && !Number.isNaN(width)) {
-      this._width = width;
-    }
+    this._width = coerceNumericProperty(_width);
   }
   private _width: number | undefined;
 
@@ -71,19 +52,7 @@ export class ImgixComponent implements AfterViewChecked {
     return this._height;
   }
   set height(_height: number | undefined) {
-    this._height = undefined;
-
-    const height = _height as unknown; // Using unknown for type safety
-
-    if (typeof height === 'string') {
-      const heightParsed = Number.parseFloat(height);
-      if (!Number.isNaN(heightParsed)) {
-        this._height = heightParsed;
-      }
-    }
-    if (typeof height === 'number' && !Number.isNaN(height)) {
-      this._height = height;
-    }
+    this._height = coerceNumericProperty(_height);
   }
   private _height: number | undefined;
 
@@ -93,17 +62,9 @@ export class ImgixComponent implements AfterViewChecked {
     return this._disableVariableQuality;
   }
   set disableVariableQuality(_disableVariableQuality: boolean) {
-    this._disableVariableQuality = false;
-    const disableVariableQuality = _disableVariableQuality as unknown;
-    if (
-      (typeof disableVariableQuality === 'string' &&
-        (disableVariableQuality.trim() === '' ||
-          disableVariableQuality.trim() === 'true')) ||
-      (typeof disableVariableQuality === 'boolean' &&
-        disableVariableQuality === true)
-    ) {
-      this._disableVariableQuality = true;
-    }
+    this._disableVariableQuality = coerceBooleanProperty(
+      _disableVariableQuality,
+    );
   }
   private _disableVariableQuality: boolean = false;
 
