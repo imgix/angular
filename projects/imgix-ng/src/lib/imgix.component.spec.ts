@@ -7,6 +7,7 @@ import {
 import {
   expectElementToHaveFixedSrcAndSrcSet,
   expectElementToHaveFluidSrcAndSrcSet,
+  expectEverySrcsetToMatch,
   expectURLToHaveIxlibParam,
 } from '../test/url-assert';
 import { ImgixConfig } from './imgix-config.service';
@@ -145,7 +146,7 @@ describe('Imgix Component', () => {
   });
 
   it('should set imgix params on the srcset', async () => {
-    expect(
+    expectEverySrcsetToMatch('txt=Hello')(
       (
         await renderImgTemplate(
           `<ix-img src='amsterdam.jpg' [imgixParams]="{txt: 'Hello'}"></ix-img>`,
@@ -153,7 +154,7 @@ describe('Imgix Component', () => {
       )
         .getComponent()
         .getAttribute('srcset'),
-    ).toMatch('txt=Hello');
+    );
   });
 
   it('should pass through html attributes', async () => {

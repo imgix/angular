@@ -56,3 +56,12 @@ export const expectElementToHaveFluidSrcAndSrcSet = (el: HTMLElement) => {
 export const expectURLToHaveIxlibParam = (value: string) => (url: string) => {
   expect(url).toMatch(`ixlib=${value}`);
 };
+
+export const expectEverySrcsetToMatch = (match: string | RegExp) => (
+  srcset: string,
+) => {
+  const srcsets = srcset.split(',').map((srcset) => srcset.trim());
+  srcsets.map((srcset) => {
+    expect(srcset).toMatch(match);
+  });
+};
