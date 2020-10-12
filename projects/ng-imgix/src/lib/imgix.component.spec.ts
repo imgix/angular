@@ -122,9 +122,8 @@ describe('Imgix Component', () => {
 
     const firstSrcSet = srcset.split(',').map((v) => v.trim())[0];
     expect(firstSrcSet.split(' ').length).toBe(2);
-    const aSrcFromSrcSet = firstSrcSet.split(' ')[0];
+    const [aSrcFromSrcSet, aWidthFromSrcSet] = firstSrcSet.split(' ');
     expect(aSrcFromSrcSet).toContain('amsterdam.jpg');
-    const aWidthFromSrcSet = firstSrcSet.split(' ')[1];
     expect(aWidthFromSrcSet).toMatch(/^\d+w$/);
   });
 
