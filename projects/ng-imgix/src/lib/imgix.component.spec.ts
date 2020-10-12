@@ -207,7 +207,7 @@ describe('Imgix Component', () => {
     });
     it('ix-img should render a fluid image if width is passed as attribute with [fixed]="false" attribute', async () => {
       const test = await renderImgTemplate(
-        `<ix-img src="amsterdam.jpg" width="100" fixed="false"></ix-img>`,
+        `<ix-img src="amsterdam.jpg" width="100" [fixed]="false"></ix-img>`,
       );
 
       expectElementToHaveFluidSrcAndSrcSet(test.getComponent());
