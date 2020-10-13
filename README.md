@@ -296,7 +296,7 @@ Lazy loading can be done with an Interaction Observer. The best way to do this i
 
 You could modify the recommended code above to remove the native lazy loading support in order to create a Lozad directive.
 
-Here's a [CSSTricks article](https://css-tricks.com/lozad-js-performant-lazy-loading-images/) about using Lozad.js, and [another one](https://css-tricks.com/tips-for-rolling-your-own-lazy-loading/) about rolling your own lazy loading
+Here's a [CSSTricks article](https://css-tricks.com/lozad-js-performant-lazy-loading-images/) about using Lozad.js, and [another one](https://css-tricks.com/tips-for-rolling-your-own-lazy-loading/) about rolling your own lazy loading.
 
 ##### Lazy-loading (Event Listener)
 
