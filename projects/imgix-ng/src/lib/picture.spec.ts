@@ -177,6 +177,27 @@ describe('Picture mode', () => {
       });
     });
   });
+
+  describe('ix-picture', () => {
+    it('renders a picture', async () => {
+      expect(
+        (
+          await renderPictureTemplate(`<ix-picture></ix-picture>`)
+        ).getComponent(),
+      );
+    });
+    it('renders children', async () => {
+      expect(
+        (
+          await renderPictureTemplate(
+            `<ix-picture><ix-source src="amsterdam.jpg"></ix-source></ix-picture>`,
+          )
+        )
+          .getComponent()
+          .querySelector('source'),
+      );
+    });
+  });
 });
 
 const renderSourceTemplate = async (
