@@ -141,7 +141,7 @@ For the width/height placeholder image, we need three requirements to be met:
 .test-img {
   /* These next two lines are critical for the new browser feature. */
   width: calc(100vw - 128px);
-  height: auto; // This tells the browser to set the height of the image to what it should be, and ignore the height attribute set on the image
+  height: auto; /* This tells the browser to set the height of the image to what it should be, and ignore the height attribute set on the image */
 }
 ```
 
