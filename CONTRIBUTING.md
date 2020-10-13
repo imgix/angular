@@ -5,7 +5,7 @@ NB: Each step has an accompanied one-liner. If these commands are pasted one aft
 - Ensure your development environment includes all [prerequisites](https://angular.io/guide/setup-local) to build and run Angular applications.
 - Clone this repo  
   One-liner: `$ git clone git@github.com:imgix/ng-imgix.git`
-- Build the `ng-imgix` library using `ng build ng-imgix`. Note that the newly bundled files can be found under `dist/ng-imgix`.  
+- Build the `ng-imgix` library using `ng build ng-imgix`. Note that the newly bundled files can be found under `projects/ng-imgix/dist`.  
   One-liner: `$ cd ng-imgix && npm install && ng build ng-imgix`
   One-liner (w/o global cli): `$ cd ng-imgix && npm install && npx -p @angular/cli ng build ng-imgix`
 - Navigate to `projects/ng-imgix/dist/` and run `npm link`.  
@@ -59,7 +59,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `projects/ng-imgix/dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
