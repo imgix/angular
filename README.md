@@ -290,6 +290,16 @@ That's all the setup we need to do! Now there's a `lazy-img` directive available
 loading="lazy" ></ix-img>
 ```
 
+##### Lazy-loading (Native)
+
+To use pure browser native lazy-loading, just add a `loading="lazy"` attribute to every image you want to lazy load.
+
+```html
+<ix-img src="..." [htmlAttributes]="{loading: 'lazy'}" ></ix-img>
+```
+
+There's more information about native lazy loading in [this web.dev article](https://web.dev/native-lazy-loading/), and in this [CSSTricks article](https://css-tricks.com/a-native-lazy-load-for-the-web-platform/).
+
 ##### Lazy-loading (Interaction Observer)
 
 Lazy loading can be done with an Interaction Observer. The best way to do this is with a library (we recommend [Lozad.js](https://apoorv.pro/lozad.js/)), but you might also want to roll your own.
