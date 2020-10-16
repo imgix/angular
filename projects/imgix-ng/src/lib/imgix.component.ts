@@ -5,7 +5,6 @@ import {
   Inject,
   Injectable,
   Input,
-  ViewChild,
 } from '@angular/core';
 import ImgixClient from 'imgix-core-js';
 import { createImgixClient } from '../common/createImgixClient';
@@ -15,17 +14,15 @@ import { IImgixParams } from './types';
 
 @Injectable()
 @Component({
-  // the [src] means that src is required
-  selector: 'ix-img[src]',
-  template: `<img [attr.height]="height" [attr.width]="width" #v />`,
+  // the [path] means that path is required
+  selector: '[ix-img][path]',
+  // template: `<img [attr.height]="height" [attr.width]="width" #v />`,
+  template: ``,
 })
 export class ImgixComponent implements AfterViewChecked {
   private readonly client: ImgixClient;
 
-  @ViewChild('v')
-  v?: ElementRef<HTMLImageElement>;
-
-  @Input() src: string;
+  @Input('path') path: string;
   @Input()
   get fixed(): boolean {
     return this._fixed;
@@ -35,9 +32,9 @@ export class ImgixComponent implements AfterViewChecked {
   }
   private _fixed: boolean = false;
 
-  @Input() imgixParams?: IImgixParams;
+  @Input('imgixParams') imgixParams?: IImgixParams;
 
-  @Input()
+  @Input('width')
   get width(): number | undefined {
     return this._width;
   }
@@ -69,20 +66,26 @@ export class ImgixComponent implements AfterViewChecked {
 
   @Input() htmlAttributes?: Record<string, string>;
 
-  constructor(@Inject(ImgixConfigService) private config: ImgixConfig) {
+  constructor(
+    @Inject(ImgixConfigService) private config: ImgixConfig,
+    private elementRef: ElementRef<HTMLImageElement>,
+  ) {
     this.client = createImgixClient(this.config);
   }
 
   ngAfterViewChecked() {
-    this.setHTMLAttributes();
     this.setSrcAndSrcsetAttributes();
+    this.setOtherAttributes();
   }
 
-  private setHTMLAttributes() {
-    const el = this.v.nativeElement;
-    Object.entries(this.htmlAttributes ?? {}).map(([key, value]) =>
-      el.setAttribute(key, value),
-    );
+  private setOtherAttributes() {
+    const el = this.elementRef.nativeElement;
+    if (this.width != null) {
+      el.setAttribute('width', String(this.width));
+    }
+    if (this.height != null) {
+      el.setAttribute('height', String(this.height));
+    }
   }
 
   private buildIxParams() {
@@ -100,16 +103,16 @@ export class ImgixComponent implements AfterViewChecked {
   }
 
   private setSrcAndSrcsetAttributes() {
-    const el = this.v.nativeElement;
+    const el = this.elementRef.nativeElement;
     el.setAttribute(this.attributeConfig?.src ?? 'src', this.srcURL);
     el.setAttribute(this.attributeConfig?.srcset ?? 'srcset', this.srcsetURL);
   }
 
   get srcURL(): string {
-    return this.client.buildURL(this.src, this.buildIxParams());
+    return this.client.buildURL(this.path, this.buildIxParams());
   }
   get srcsetURL(): string {
-    return this.client.buildSrcSet(this.src, this.buildIxParams(), {
+    return this.client.buildSrcSet(this.path, this.buildIxParams(), {
       disableVariableQuality: this.disableVariableQuality,
     });
   }

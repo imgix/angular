@@ -12,7 +12,7 @@ describe('Picture mode', () => {
       expect(
         (
           await renderSourceTemplate(
-            `<ix-source src='amsterdam.jpg'></ix-source>`,
+            `<source ix-source path='amsterdam.jpg' />`,
           )
         )
           .getComponent()
@@ -23,7 +23,7 @@ describe('Picture mode', () => {
       expectSrcSetToBeFluid(
         (
           await renderSourceTemplate(
-            `<ix-source src='amsterdam.jpg'></ix-source>`,
+            `<source ix-source path='amsterdam.jpg' />`,
           )
         )
           .getComponent()
@@ -34,7 +34,7 @@ describe('Picture mode', () => {
       expectSrcSetToBeFixed(
         (
           await renderSourceTemplate(
-            `<ix-source src='amsterdam.jpg' [imgixParams]="{w: 100}"></ix-source>`,
+            `<source ix-source path='amsterdam.jpg' [imgixParams]="{w: 100}" />`,
           )
         )
           .getComponent()
@@ -47,7 +47,7 @@ describe('Picture mode', () => {
       expect(
         (
           await renderSourceTemplate(
-            `<ix-source src='amsterdam.jpg' [imgixParams]="{h: 200}"></ix-source>`,
+            `<source ix-source path='amsterdam.jpg' [imgixParams]="{h: 200}" />`,
           )
         )
           .getComponent()
@@ -57,7 +57,7 @@ describe('Picture mode', () => {
 
     it('should pass through html attributes', async () => {
       const test = await renderSourceTemplate(
-        `<ix-source src="amsterdam.jpg" [htmlAttributes]="{'class': 'img-class'}" ></ix-source>`,
+        `<source ix-source path="amsterdam.jpg" class="img-class"  />`,
       );
 
       expect(test.getComponent().getAttribute('class')).toBe('img-class');
@@ -68,7 +68,7 @@ describe('Picture mode', () => {
       ATTRIBUTES.forEach((attribute) => {
         it(`${attribute} can be configured to use data-${attribute}`, async () => {
           const test = await renderSourceTemplate(
-            `<ix-source src="amsterdam.jpg" [attributeConfig]="{'${attribute}': 'data-${attribute}'}" ></ix-source>`,
+            `<source ix-source path="amsterdam.jpg" [attributeConfig]="{'${attribute}': 'data-${attribute}'}"  />`,
           );
 
           expect(test.getComponent().getAttribute(`data-${attribute}`)).toMatch(
@@ -82,7 +82,7 @@ describe('Picture mode', () => {
     describe('disableVariableQuality', () => {
       it('should not disable variable quality by default', async () => {
         const test = await renderSourceTemplate(
-          `<ix-source src="amsterdam.jpg" [imgixParams]="{w: 100}"></ix-source>`,
+          `<source ix-source path="amsterdam.jpg" [imgixParams]="{w: 100}" />`,
         );
 
         const srcset = test.getComponent().getAttribute('srcset');
@@ -97,7 +97,7 @@ describe('Picture mode', () => {
       });
       it('the srcset should have a variable quality when disableVariableQuality attribute set', async () => {
         const test = await renderSourceTemplate(
-          `<ix-source src="amsterdam.jpg" [imgixParams]="{w: 100}" disableVariableQuality></ix-source>`,
+          `<source ix-source path="amsterdam.jpg" [imgixParams]="{w: 100}" disableVariableQuality />`,
         );
 
         const srcset = test.getComponent().getAttribute('srcset');
@@ -108,7 +108,7 @@ describe('Picture mode', () => {
     describe('ixlib param', () => {
       it(`should be present by default and equal to "ng"`, async () => {
         const test = await renderSourceTemplate(
-          `<ix-source src="amsterdam.jpg" ></ix-source>`,
+          `<source ix-source path="amsterdam.jpg"  />`,
         );
 
         const expectIxlibParam = expectURLToHaveIxlibParam('ng');
@@ -119,7 +119,7 @@ describe('Picture mode', () => {
 
       it(`should contain the correct package version`, async () => {
         const test = await renderSourceTemplate(
-          `<ix-source src="amsterdam.jpg" ></ix-source>`,
+          `<source ix-source path="amsterdam.jpg"  />`,
         );
 
         const packageVersion = require('../../package.json').version;
@@ -133,7 +133,7 @@ describe('Picture mode', () => {
 
       it(`should not be included in src/srcset when includeLibraryParam is false`, async () => {
         const test = await renderSourceTemplate(
-          `<ix-source src="amsterdam.jpg" ></ix-source>`,
+          `<source ix-source path="amsterdam.jpg"  />`,
           { domain: 'assets.imgix.net', includeLibraryParam: false },
         );
 
@@ -145,7 +145,7 @@ describe('Picture mode', () => {
     describe('default parameters', () => {
       it('should be applied to srcset', async () => {
         const test = await renderSourceTemplate(
-          `<ix-source src="amsterdam.jpg"></ix-source>`,
+          `<source ix-source path="amsterdam.jpg" />`,
           {
             domain: 'assets.imgix.net',
             defaultImgixParams: {
@@ -161,7 +161,7 @@ describe('Picture mode', () => {
       });
       it('should be overridden by locally set parameters', async () => {
         const test = await renderSourceTemplate(
-          `<ix-source src="amsterdam.jpg" [imgixParams]="{txt: 'Overridden'}"></ix-source>`,
+          `<source ix-source path="amsterdam.jpg" [imgixParams]="{txt: 'Overridden'}" />`,
           {
             domain: 'assets.imgix.net',
             defaultImgixParams: {
@@ -182,15 +182,15 @@ describe('Picture mode', () => {
     it('renders a picture', async () => {
       expect(
         (
-          await renderPictureTemplate(`<ix-picture></ix-picture>`)
-        ).getComponent(),
-      );
+          await renderPictureTemplate(`<picture ix-picture></picture>`)
+        ).getComponent().tagName,
+      ).toBe('PICTURE');
     });
     it('renders children', async () => {
       expect(
         (
           await renderPictureTemplate(
-            `<ix-picture><ix-source src="amsterdam.jpg"></ix-source></ix-picture>`,
+            `<picture ix-picture><source ix-source path="amsterdam.jpg" /></picture>`,
           )
         )
           .getComponent()
