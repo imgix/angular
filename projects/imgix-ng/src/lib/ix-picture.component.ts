@@ -2,7 +2,7 @@ import { Component, Injectable } from '@angular/core';
 
 @Injectable()
 @Component({
-  selector: 'ix-picture',
-  template: '<picture><ng-content></ng-content></picture>',
+  selector: '[ix-picture]',
+  template: '<ng-content></ng-content>',
 })
 export class IxPictureComponent {}

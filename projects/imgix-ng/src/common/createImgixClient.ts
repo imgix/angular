@@ -1,5 +1,5 @@
 import ImgixClient from 'imgix-core-js';
-import { ImgixConfig } from 'projects/imgix-ng/dist/lib/imgix-config.service';
+import { ImgixConfig } from '../lib/imgix-config.service';
 import { IMGIX_NG_VERSION } from './constants';
 
 export function createImgixClient(config: ImgixConfig): ImgixClient {

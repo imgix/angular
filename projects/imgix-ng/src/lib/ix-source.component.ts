@@ -5,7 +5,6 @@ import {
   Inject,
   Injectable,
   Input,
-  ViewChild,
 } from '@angular/core';
 import ImgixClient from 'imgix-core-js';
 import { createImgixClient } from '../common/createImgixClient';
@@ -15,16 +14,14 @@ import { IImgixParams } from './types';
 
 @Injectable()
 @Component({
-  selector: 'ix-source[src]',
-  template: `<source #v />`,
+  // the [path] means that path is required
+  selector: '[ix-source][path]',
+  template: ``,
 })
 export class IxSourceComponent implements AfterViewChecked {
   private readonly client: ImgixClient;
 
-  @ViewChild('v')
-  v?: ElementRef<HTMLImageElement>;
-
-  @Input() src: string;
+  @Input('path') path: string;
   @Input() imgixParams?: IImgixParams;
   @Input() attributeConfig?: { srcset?: string };
   @Input() htmlAttributes?: Record<string, string>;
@@ -39,19 +36,15 @@ export class IxSourceComponent implements AfterViewChecked {
   }
   private _disableVariableQuality: boolean = false;
 
-  constructor(@Inject(ImgixConfigService) private config: ImgixConfig) {
+  constructor(
+    @Inject(ImgixConfigService) private config: ImgixConfig,
+    private elementRef: ElementRef,
+  ) {
     this.client = createImgixClient(config);
   }
 
   ngAfterViewChecked() {
-    this.setHTMLAttributes();
     this.setSrcsetAttribute();
-  }
-  private setHTMLAttributes() {
-    const el = this.v.nativeElement;
-    Object.entries(this.htmlAttributes ?? {}).map(([key, value]) =>
-      el.setAttribute(key, value),
-    );
   }
   private buildIxParams() {
     const imgixParamsFromImgAttributes = {};
@@ -62,11 +55,11 @@ export class IxSourceComponent implements AfterViewChecked {
     };
   }
   private setSrcsetAttribute() {
-    const el = this.v.nativeElement;
+    const el = this.elementRef.nativeElement;
     el.setAttribute(this.attributeConfig?.srcset ?? 'srcset', this.srcsetURL);
   }
   get srcsetURL(): string {
-    return this.client.buildSrcSet(this.src, this.buildIxParams(), {
+    return this.client.buildSrcSet(this.path, this.buildIxParams(), {
       disableVariableQuality: this.disableVariableQuality,
     });
   }
