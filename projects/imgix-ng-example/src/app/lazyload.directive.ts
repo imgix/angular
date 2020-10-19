@@ -4,13 +4,13 @@ import lozad from 'lozad';
 const isNativeLazyLoadingSupported = 'loading' in HTMLImageElement.prototype;
 
 @Directive({
-  selector: '[lazy-img]',
+  selector: '[lazyImg]',
 })
 export class LazyloadDirective implements AfterViewChecked {
   private observer: lozad.Observer;
   constructor(private el: ElementRef) {}
   ngAfterViewChecked() {
-    const nativeEl = this.el.nativeElement.children[0];
+    const nativeEl = this.el.nativeElement;
     if (
       isNativeLazyLoadingSupported ||
       nativeEl.getAttribute('data-loaded') === 'true'
