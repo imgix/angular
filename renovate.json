@@ -1,12 +1,27 @@
 {
-  "extends": [
-    "config:js-lib"
-  ],
+  "extends": ["config:js-lib"],
   "automerge": false,
   "patch": {
     "automerge": true
   },
   "devDependencies": {
     "automerge": true
-  }
+  },
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "^@angular/",
+        "^zone.js$",
+        "^@angular-devkit/",
+        "^jasmine",
+        "karma",
+        "ng-packgr",
+        "protractor",
+        "tslint",
+        "typescript"
+      ],
+      "updateTypes": ["major"],
+      "enabled": false
+    }
+  ]
 }
