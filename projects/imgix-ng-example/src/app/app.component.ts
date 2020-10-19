@@ -2,15 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  // templateUrl: './app.component.html',
-  template: `<ix-img
-    src="unsplash/motorbike.jpg"
-    [attributeConfig]="{ src: 'data-src', srcset: 'data-srcset' }"
-    lazy-img
-    loading="lazy"
-  ></ix-img>`,
-  styleUrls: ['./app.component.css'],
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   title = 'imgix-ng-example';
+
+  testWidth = 200;
 }
