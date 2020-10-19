@@ -21,11 +21,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgImgixModule } from '@imgix/angular';
+import { ImgixAngularModule } from '@imgix/angular';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, NgImgixModule],
+  imports: [BrowserModule, ImgixAngularModule],
   providers: [],
   bootstrap: [AppComponent],
 })

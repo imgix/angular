@@ -63,12 +63,12 @@ Below are some other articles that help explain responsive imagery, and how it c
 3. Add the module to your app module declaration (usually in `src/app/app.module.ts`):
 
 ```ts
-import { NgImgixModule } from '@ng/imgix';
+import { ImgixAngularModule } from '@ng/imgix';
 
 @NgModule({
   // ...
   imports: [
-    NgImgixModule.forRoot({
+    ImgixAngularModule.forRoot({
       domain: '<your source url, e.g. assets.imgix.net>',
       defaultParams: {
         // This enables the auto format and compress imgix parameters by default for all images, which we recommend to reduce image size, but you might choose to turn this off.
@@ -427,11 +427,11 @@ For security and diagnostic purposes, we tag all requests with the language and 
 To disable this, set `includeLibraryParam` to false when initializing `NgImgix`.
 
 ```js
-import { NgImgixModule } from '@imgix/angular';
+import { ImgixAngularModule } from '@imgix/angular';
 
 @NgModule({
   imports: [
-    NgImgixModule.forRoot({
+    ImgixAngularModule.forRoot({
       domain: 'example.imgix.net',
       includeLibraryParam: false,
     }),

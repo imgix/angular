@@ -4,9 +4,9 @@ import {
   RenderComponentOptions,
   screen,
 } from '@testing-library/angular';
-import { NgImgixModule } from '../lib/imgix-angular.module';
+import { ImgixAngularModule } from '../lib/imgix-angular.module';
 import { ImgixConfig } from '../lib/imgix-config.service';
-import { ImgixComponent } from '../lib/imgix.component';
+import { IxImgComponent } from '../lib/ix-img.component';
 
 let randCounter = 0;
 export const genRandId = () => `test-${randCounter++}`;
@@ -28,12 +28,12 @@ export const createComponentWithTestWrapper = (template: string) => {
 
 export const renderComponentWithImgixComponent = async (
   component: Parameters<typeof render>[0],
-  renderOptions?: RenderComponentOptions<ImgixComponent>,
+  renderOptions?: RenderComponentOptions<IxImgComponent>,
   config?: ImgixConfig,
 ) =>
   await render(component, {
     imports: [
-      NgImgixModule.forRoot(
+      ImgixAngularModule.forRoot(
         config ?? {
           domain: 'assets.imgix.net',
         },
@@ -56,13 +56,13 @@ const renderWithProps = async ({
   props,
   config,
 }: {
-  props: Partial<ImgixComponent>;
+  props: Partial<IxImgComponent>;
   config?: ImgixConfig;
 }) => {
   const testid = genRandId();
-  const fixture = await render(ImgixComponent, {
+  const fixture = await render(IxImgComponent, {
     imports: [
-      NgImgixModule.forRoot(
+      ImgixAngularModule.forRoot(
         config ?? {
           domain: 'assets.imgix.net',
         },
