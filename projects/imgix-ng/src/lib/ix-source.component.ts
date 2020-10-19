@@ -15,7 +15,7 @@ import { IImgixParams } from './types';
 @Injectable()
 @Component({
   // the [path] means that path is required
-  selector: '[ix-source][path]',
+  selector: '[ixSource][path]',
   template: ``,
 })
 export class IxSourceComponent implements AfterViewChecked {
