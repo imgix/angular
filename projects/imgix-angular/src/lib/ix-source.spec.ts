@@ -10,22 +10,14 @@ describe('Picture mode', () => {
   describe('ixSource', () => {
     it('should set a srcset with the correct url', async () => {
       expect(
-        (
-          await renderSourceTemplate(
-            `<source ixSource path='amsterdam.jpg' />`,
-          )
-        )
+        (await renderSourceTemplate(`<source ixSource path='amsterdam.jpg' />`))
           .getComponent()
           .getAttribute('srcset'),
       ).toMatch('https://assets.imgix.net/amsterdam.jpg');
     });
     it('should set a fluid srcset', async () => {
       expectSrcSetToBeFluid(
-        (
-          await renderSourceTemplate(
-            `<source ixSource path='amsterdam.jpg' />`,
-          )
-        )
+        (await renderSourceTemplate(`<source ixSource path='amsterdam.jpg' />`))
           .getComponent()
           .getAttribute('srcset'),
       );
@@ -195,7 +187,7 @@ describe('Picture mode', () => {
         )
           .getComponent()
           .querySelector('source'),
-      );
+      ).toBeTruthy();
     });
   });
 });
