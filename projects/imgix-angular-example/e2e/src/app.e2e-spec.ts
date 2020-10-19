@@ -10,7 +10,9 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('imgix-ng-example app is running!');
+    expect(page.getTitleText()).toEqual(
+      'imgix-angular-example app is running!',
+    );
   });
 
   afterEach(async () => {

@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'imgix-ng-example'`, () => {
+  it(`should have as title 'imgix-angular-example'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('imgix-ng-example');
+    expect(app.title).toEqual('imgix-angular-example');
   });
 
   it('should render title', () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain(
-      'imgix-ng-example app is running!',
+      'imgix-angular-example app is running!',
     );
   });
 });

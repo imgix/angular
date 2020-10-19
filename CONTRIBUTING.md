@@ -4,24 +4,24 @@ NB: Each step has an accompanied one-liner. If these commands are pasted one aft
 
 - Ensure your development environment includes all [prerequisites](https://angular.io/guide/setup-local) to build and run Angular applications.
 - Clone this repo  
-  One-liner: `$ git clone git@github.com:imgix/ng-imgix.git`
-- Build the `@imgix/ng` library using `ng build imgix-ng`. Note that the newly bundled files can be found under `project/imgix-ng/dist`.  
-  One-liner: `$ cd ng-imgix && npm install && ng build imgix-ng`
-  One-liner (w/o global cli): `$ cd ng-imgix && npm install && npx -p @angular/cli ng build imgix-ng`
-- Navigate to `projects/imgix-ng/dist/` and run `npm link`.  
-  One-liner: `$ cd projects/imgix-ng/dist && npm link`
-- In a separate directory, create a new Angular application using `ng new example-app`. This is where `imgix-ng` can be tested.
+  One-liner: `$ git clone git@github.com:imgix/angular.git`
+- Build the `@imgix/angular` library using `ng build imgix-angular`. Note that the newly bundled files can be found under `project/imgix-angular/dist`.  
+  One-liner: `$ cd angular && npm install && ng build imgix-angular`
+  One-liner (w/o global cli): `$ cd angular && npm install && npx -p @angular/cli ng build imgix-angular`
+- Navigate to `projects/imgix-angular/dist/` and run `npm link`.  
+  One-liner: `$ cd projects/imgix-angular/dist && npm link`
+- In a separate directory, create a new Angular application using `ng new example-app`. This is where `imgix-angular` can be tested.
   One-liner: `$ cd ../../../ && ng new example-app`
-- In this example app, run `npm link @imgix/ng`. This allows `@imgix/ng` to be used within the application.  
-  One-liner: `$ cd example-app && npm link @imgix/ng`
-- Modify the application's `app.module.ts` to import `@imgix/ng`:
+- In this example app, run `npm link @imgix/angular`. This allows `@imgix/angular` to be used within the application.  
+  One-liner: `$ cd example-app && npm link @imgix/angular`
+- Modify the application's `app.module.ts` to import `@imgix/angular`:
 
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgImgixModule } from '@imgix/ng';
+import { NgImgixModule } from '@imgix/angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -59,7 +59,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `projects/ng-imgix/dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `projects/imgix-angular/dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 

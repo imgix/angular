@@ -4,8 +4,8 @@ import {
   RenderComponentOptions,
   screen,
 } from '@testing-library/angular';
+import { NgImgixModule } from '../lib/imgix-angular.module';
 import { ImgixConfig } from '../lib/imgix-config.service';
-import { NgImgixModule } from '../lib/imgix-ng.module';
 import { ImgixComponent } from '../lib/imgix.component';
 
 let randCounter = 0;

@@ -1,7 +1,7 @@
 /*
- * Public API Surface of imgix-ng
+ * Public API Surface of imgix-angular
  */
 
-export * from './lib/imgix-ng.module';
+export * from './lib/imgix-angular.module';
 export * from './lib/imgix.component';
 export * from './lib/ix-source.component';

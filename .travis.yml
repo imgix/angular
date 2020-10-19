@@ -28,7 +28,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - cd projects/imgix-ng && npx semantic-release
+    - cd projects/imgix-angular && npx semantic-release
   on:
     branch: next
 
