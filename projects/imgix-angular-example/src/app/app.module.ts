@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgImgixModule } from '@imgix/angular';
+import { ImgixAngularModule } from '@imgix/angular';
 import { AppComponent } from './app.component';
 import { LazyloadDirective } from './lazyload.directive';
 
@@ -8,7 +8,7 @@ import { LazyloadDirective } from './lazyload.directive';
   declarations: [AppComponent, LazyloadDirective],
   imports: [
     BrowserModule,
-    NgImgixModule.forRoot({
+    ImgixAngularModule.forRoot({
       domain: 'assets.imgix.net',
       defaultImgixParams: {
         auto: 'format,compress',

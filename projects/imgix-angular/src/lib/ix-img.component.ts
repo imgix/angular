@@ -16,10 +16,9 @@ import { IImgixParams } from './types';
 @Component({
   // the [path] means that path is required
   selector: '[ixImg][path]',
-  // template: `<img [attr.height]="height" [attr.width]="width" #v />`,
   template: ``,
 })
-export class ImgixComponent implements AfterViewChecked {
+export class IxImgComponent implements AfterViewChecked {
   private readonly client: ImgixClient;
 
   @Input('path') path: string;
