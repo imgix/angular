@@ -5,28 +5,28 @@
     }
   </style>
   <img
-    ix-img
+    ixImg
     path="unsplash/motorbike.jpg"
     [imgixParams]="{ fit: 'crop' }"
     fixed
-    width="{{ testWidth }}"
+    [width]="50"
     [height]="25"
   />
-  <picture ix-picture>
+  <picture ixPicture>
     <source
-      ix-source
+      ixSource
       path="amsterdam.jpg"
       media="(min-width: 768px)"
       [imgixParams]="{ fit: 'crop', ar: '1:1' }"
     />
     <source
-      ix-source
+      ixSource
       path="amsterdam.jpg"
       media="(min-width: 320px)"
       [imgixParams]="{ fit: 'crop', ar: '0.5:1' }"
     />
     <img
-      ix-img
+      ixImg
       path="amsterdam.jpg"
       [imgixParams]="{ w: 100, fit: 'crop', ar: '4:1' }"
       [htmlAttributes]="{ class: 'picture-img' }"
@@ -34,19 +34,19 @@
   </picture>
   <picture>
     <source
-      ix-source
+      ixSource
       path="amsterdam.jpg"
       media="(min-width: 768px)"
       [imgixParams]="{ fit: 'crop', ar: '2:1', w: 768 }"
     />
     <source
-      ix-source
+      ixSource
       path="amsterdam.jpg"
       media="(min-width: 320px)"
       [imgixParams]="{ fit: 'crop', ar: '1.5:1', w: 320 }"
     />
     <img
-      ix-img
+      ixImg
       path="unsplash/motorbike.jpg"
       [imgixParams]="{ w: 100 }"
       sizes="100px"
