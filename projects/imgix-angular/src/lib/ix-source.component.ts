@@ -24,7 +24,6 @@ export class IxSourceComponent implements AfterViewChecked {
   @Input('path') path: string;
   @Input() imgixParams?: IImgixParams;
   @Input() attributeConfig?: { srcset?: string };
-  @Input() htmlAttributes?: Record<string, string>;
   @Input()
   get disableVariableQuality(): boolean {
     return this._disableVariableQuality;
