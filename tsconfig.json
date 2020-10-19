@@ -15,8 +15,8 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
-      "@imgix/ng": ["projects/imgix-ng/dist"],
-      "@imgix/ng/*": ["dist/imgix-ng/*"]
+      "@imgix/angular": ["projects/imgix-angular/dist"],
+      "@imgix/angular/*": ["dist/imgix-angular/*"]
     },
     "skipLibCheck": true,
     "resolveJsonModule": true

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgImgixModule } from '@imgix/ng';
+import { NgImgixModule } from '@imgix/angular';
 import { AppComponent } from './app.component';
 import { LazyloadDirective } from './lazyload.directive';
 

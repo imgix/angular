@@ -2,14 +2,14 @@
 
 ![imgix logo](https://assets.imgix.net/sdk-imgix-logo.svg)
 
-`@imgix/ng` is a client library for generating URLs with [imgix](https://www.imgix.com/).
+`@imgix/angular` is a client library for generating URLs with [imgix](https://www.imgix.com/).
 
-[![npm version](https://img.shields.io/npm/v/@imgix/ng.svg)](https://www.npmjs.com/package/@imgix/ng)
-[![Build Status](https://travis-ci.org/imgix/ng-imgix.svg?branch=main)](https://travis-ci.org/imgix/ng-imgix)
-[![Downloads](https://img.shields.io/npm/dm/@imgix/ng.svg)](https://www.npmjs.com/package/@imgix/ng)
-[![License](https://img.shields.io/npm/l/@imgix/ng)](https://github.com/imgix/ng-imgix/blob/main/LICENSE)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fimgix%2Fng-imgix.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fimgix%2Fng-imgix?ref=badge_shield)
-[![Dependencies Status](https://david-dm.org/imgix/ng-imgix.svg)](https://david-dm.org/imgix/ng-imgix)
+[![npm version](https://img.shields.io/npm/v/@imgix/angular.svg)](https://www.npmjs.com/package/@imgix/angular)
+[![Build Status](https://travis-ci.org/imgix/angular.svg?branch=main)](https://travis-ci.org/imgix/angular)
+[![Downloads](https://img.shields.io/npm/dm/@imgix/angular.svg)](https://www.npmjs.com/package/@imgix/angular)
+[![License](https://img.shields.io/npm/l/@imgix/angular)](https://github.com/imgix/angular/blob/main/LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fimgix%2Fangular.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fimgix%2Fangular?ref=badge_shield)
+[![Dependencies Status](https://david-dm.org/imgix/angular.svg)](https://david-dm.org/imgix/angular)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -53,13 +53,13 @@
 
 Below are some other articles that help explain responsive imagery, and how it can work alongside imgix:
 
-- [Using imgix with `<picture>`](https://docs.imgix.com/tutorials/using-imgixPicture-element). Discusses the differences between art direction and resolution switching, and provides examples of how to accomplish art direction with imgix.
+- [Using imgix with `<picture>`](https://docs.imgix.com/tutorials/usiangularPicture-element). Discusses the differences between art direction and resolution switching, and provides examples of how to accomplish art direction with imgix.
 - [Responsive Images with `srcset` and imgix](https://docs.imgix.com/tutorials/responsive-images-srcset-imgix). A look into how imgix can work with `srcset` and `sizes` to serve the right image.
 
 ## Get Started
 
 1. Firstly, follow this [quick start guide](https://docs.imgix.com/setup/quick-start) to set-up an imgix account.
-2. Then, install @imgix/ng from npm with: `npm install @imgix/ng` or `yarn add @imgix/ng`
+2. Then, install @imgix/angular from npm with: `npm install @imgix/angular` or `yarn add @imgix/angular`
 3. Add the module to your app module declaration (usually in `src/app/app.module.ts`):
 
 ```ts
@@ -342,7 +342,7 @@ If you'd still like to use an event listener, we recommend using [lazysizes](htt
 
 With the picture element, images can be directed to have different crops and sizes based on the browser dimensions, or any media query.
 
-It is recommended to check out our [introduction blog post about how to best use picture and the imgix API](https://docs.imgix.com/tutorials/using-imgixPicture-element) for some great tips and examples!
+It is recommended to check out our [introduction blog post about how to best use picture and the imgix API](https://docs.imgix.com/tutorials/usiangularPicture-element) for some great tips and examples!
 
 ##### Fluid mode
 
@@ -427,7 +427,7 @@ For security and diagnostic purposes, we tag all requests with the language and 
 To disable this, set `includeLibraryParam` to false when initializing `NgImgix`.
 
 ```js
-import { NgImgixModule } from '@imgix/ng';
+import { NgImgixModule } from '@imgix/angular';
 
 @NgModule({
   imports: [
@@ -476,4 +476,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fimgix%2Fng-imgix.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fimgix%2Fng-imgix?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fimgix%2Fangular.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fimgix%2Fangular?ref=badge_large)
