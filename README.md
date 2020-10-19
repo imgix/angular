@@ -36,6 +36,7 @@
         + [Flexible Image Rendering](#flexible-image-rendering)
         + [Fixed Image Rendering (i.e. non-flexible)](#fixed-image-rendering-ie-non-flexible)
         + [Lazy-Loading](#lazy-loading)
+        + [Picture Support](#picture-support)
     * [Advanced Examples](#advanced-examples)
         + [Custom Attribute Mapping](#custom-attribute-mapping)
         + [Base64 Encoding](#base64-encoding)
@@ -52,7 +53,7 @@
 
 Below are some other articles that help explain responsive imagery, and how it can work alongside imgix:
 
-- [Using imgix with `<picture>`](https://docs.imgix.com/tutorials/using-imgix-picture-element). Discusses the differences between art direction and resolution switching, and provides examples of how to accomplish art direction with imgix.
+- [Using imgix with `<picture>`](https://docs.imgix.com/tutorials/using-imgixPicture-element). Discusses the differences between art direction and resolution switching, and provides examples of how to accomplish art direction with imgix.
 - [Responsive Images with `srcset` and imgix](https://docs.imgix.com/tutorials/responsive-images-srcset-imgix). A look into how imgix can work with `srcset` and `sizes` to serve the right image.
 
 ## Get Started
@@ -91,7 +92,7 @@ The current recommendation as of writing this library is that all Angular librar
 
 ## Usage
 
-This library exports an Angular component, and to help you get started as quickly as possible, this component has been designed to follow the API of a native `<img>` tag as much as possible. You can expect most uses of the `<img>` tag to work just the same for `<ix-img>`.
+This library exports an Angular component, and to help you get started as quickly as possible, this component has been designed to follow the API of a native `<img>` tag as much as possible. You can expect most uses of the `<img>` tag to work just the same for `<ixImg>`.
 
 ### Examples
 
@@ -100,7 +101,7 @@ This library exports an Angular component, and to help you get started as quickl
 To render a simple image that will display an image based on the browser's DPR and the width of the rendered element using the power of srcsets, add the following code to your view template:
 
 ```html
-<ix-img src="examples/pione.jpg" sizes="100vw"></ix-img>
+<img ixImg path="examples/pione.jpg" sizes="100vw" />
 ```
 
 <!-- [![Edit festive-mclean-6risg](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/festive-mclean-6risg?fontsize=14&hidenavigation=1&theme=dark) -->
@@ -121,6 +122,8 @@ This will generate HTML similar to the following:
 />
 ```
 
+**Why the attribute `ixImg` rather than a component?** Unfortunately, due to Angular restrictions, if this library had simply used a `ix-img` component (e.g. `<ix-img src="..."></ix-img>`), the resulting `img` would have been wrapped in a wrapper component, which would cause issues with layout, and also with the picture element.
+
 #### Flexible Image Rendering
 
 This component acts dynamically by default. The component will leverage `srcset` and `sizes` to render the right size image for its container. This is an example of this responsive behaviour.
@@ -140,7 +143,7 @@ For the width/height placeholder image, we need three requirements to be met:
 ```css
 .test-img {
   /* These next two lines are critical for the new browser feature. */
-  width: calc(100vw - 128px);
+  width: 100%;
   height: auto; /* This tells the browser to set the height of the image to what it should be, and ignore the height attribute set on the image */
 }
 ```
@@ -150,13 +153,14 @@ For the width/height placeholder image, we need three requirements to be met:
 For the width and height attributes, they can be any value as long as their aspect ratio is the same as what the image's aspect ratio is. E.g. `width = 100, height = 50` is fine, and also `width = 2, height = 1` is fine. In this case, the image has an aspect ratio of ~0.66:1, so we have set set a width of 66 and a height of 100, but we could have also used a width and height of 33 and 50, or 660 and 1000, for example.
 
 ```html
-<ix-img
-  src="examples/pione.jpg"
+<img
+  ixImg
+  path="examples/pione.jpg"
   sizes="calc(100vw - 128px)"
-  [htmlAttributes]="{class: 'test-img'}"
+  class="test-img"
   width="66"
   height="100"
-></ix-img>
+/>
 ```
 
 **Aspect Ratio:** A developer can pass a desired aspect ratio, which will be used when
@@ -164,14 +168,15 @@ generating srcsets to resize and crop your image as specified. For the `ar` para
 
 <!-- prettier-ignore-start -->
 ```jsx
-<ix-img
-  src="examples/pione.jpg"
+<img
+  ixImg
+  path="examples/pione.jpg"
   sizes="calc(100vw - 128px)"
   [imgixParams]="{ ar: '16:9', fit: 'crop' }"
   // It's important to set these attributes to the aspect ratio that we manually specify.
   width="16"
   height="9"
-></ix-img>
+/>
 ```
 <!-- prettier-ignore-end -->
 
@@ -182,12 +187,13 @@ The aspect ratio is specified in the format `width:height`. Either dimension can
 If the fluid, dynamic nature explained above is not desired, the width and height can be set explicitly along with a `fixed` prop. The imgix CDN will then render an image with these exact dimensions
 
 ```jsx
-<ix-img
-  src="image.jpg"
+<img
+  ixImg
+  path="image.jpg"
   width="100" // This width and the height below sets what resolution the component should load from the CDN and the size of the resulting image
   height="200"
-  fixed
-></ix-img>
+  fixed // This toggles on fixed rendering
+/>
 ```
 
 This will generate an image element like:
@@ -209,7 +215,7 @@ Fixed image rendering will automatically append a variable `q` parameter mapped 
 This behavior will respect any overriding `q` value passed in via `imgixParams` and can be disabled altogether with the boolean property `disableVariableQuality`.
 
 ```html
-<ix-img src="image.jpg" width="100" disableVariableQuality></ix-img>
+<img ixImg path="image.jpg" width="100" disableVariableQuality />
 ```
 
 will generate the following srcset:
@@ -261,7 +267,7 @@ export class LazyloadDirective implements AfterViewChecked {
   private observer: lozad.Observer;
   constructor(private el: ElementRef) {}
   ngAfterViewChecked() {
-    const nativeEl = this.el.nativeElement.children[0];
+    const nativeEl = this.el.nativeElement;
     if (
       isNativeLazyLoadingSupported ||
       nativeEl.getAttribute('data-loaded') === 'true'
@@ -282,12 +288,16 @@ export class LazyloadDirective implements AfterViewChecked {
 
 ```
 
-That's all the setup we need to do! Now there's a `lazy-img` directive available for us to use on our images! So let's do that. To use this directive with `ix-img`, make sure you're using `attribute-config` to redirect the src and srcset to `data-src` and `data-srcset`, which will be picked up either by Lozad, or the code we just wrote before.
+That's all the setup we need to do! Now there's a `lazy-img` directive available for us to use on our images! So let's do that. To use this directive with `ixImg`, make sure you're using `attribute-config` to redirect the src and srcset to `data-src` and `data-srcset`, which will be picked up either by Lozad, or the code we just wrote before.
 
 ```jsx
-<ix-img src="blog/unsplash-kiss.jpg"
-[attributeConfig]="{ src: 'data-src', srcset: 'data-srcset' }" lazy-img
-loading="lazy" ></ix-img>
+<img
+  ixImg
+  path="blog/unsplash-kiss.jpg"
+  [attributeConfig]="{ src: 'data-src', srcset: 'data-srcset' }"
+  lazy-img
+  loading="lazy"
+/>
 ```
 
 ##### Lazy-loading (Native)
@@ -295,7 +305,7 @@ loading="lazy" ></ix-img>
 To use pure browser native lazy-loading, just add a `loading="lazy"` attribute to every image you want to lazy load.
 
 ```html
-<ix-img src="..." [htmlAttributes]="{loading: 'lazy'}" ></ix-img>
+<img ixImg path="..." loading="lazy" />
 ```
 
 There's more information about native lazy loading in [this web.dev article](https://web.dev/native-lazy-loading/), and in this [CSSTricks article](https://css-tricks.com/a-native-lazy-load-for-the-web-platform/).
@@ -315,17 +325,52 @@ The last way to implement lazy loading is to use an event listener. This is not 
 If you'd still like to use an event listener, we recommend using [lazysizes](https://github.com/aFarkas/lazysizes). In order to use this library with lazysizes, you can simply tell it to generate lazysizes-compatible attributes instead of the standard `src`, `srcset` by changing some configuration settings:
 
 ```html
-<ix-img
+<img
+  ixImg
   class="lazyload"
-  src="..."
-  attributeConfig="{
+  path="..."
+  [attributeConfig]="{
     src: 'data-src',
     srcSet: 'data-srcset',
   }"
-></ix-img>
+/>
 ```
 
 **NB:** It is recommended to use the [attribute change plugin](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/attrchange) in order to capture changes in the data-\* attributes. Without this, changing the props to this library will have no effect on the rendered image.
+
+#### Picture Support
+
+With the picture element, images can be directed to have different crops and sizes based on the browser dimensions, or any media query.
+
+It is recommended to check out our [introduction blog post about how to best use picture and the imgix API](https://docs.imgix.com/tutorials/using-imgixPicture-element) for some great tips and examples!
+
+##### Fluid mode
+
+By default, the srcset values generated for are fluid-width srcsets, will respond with the actual size of your picture element page, as a fluid-width image would.
+
+<!-- prettier-ignore-start -->
+```html
+<picture ixPicture>
+  <source ixSource path="image.jpg" media="(min-width: 768px)" [imgixParams]="{ fit: 'crop', ar: '2:1' }"></ixSource> 
+  <source ixSource path="image.jpg" media="(min-width: 320px)" [imgixParams]="{ fit: 'crop', ar: '1.5:1' }"/> 
+  <img ixImg path="image.jpg" [imgixParams]="{ w: 100, fit: 'crop', ar: '3:1' }" />
+</picture>
+```
+<!-- prettier-ignore-end -->
+
+##### Fixed mode
+
+If you provide a width (`w`) as an imgix parameter, the srcset will instead be a "DPR" srcset.
+
+<!-- prettier-ignore-start -->
+```html
+<picture ixPicture>
+  <source ixSource path="image.jpg" media="(min-width: 768px)" [imgixParams]="{ fit: 'crop', ar: '2:1', w: 768 }"/> 
+  <source ixSource path="image.jpg" media="(min-width: 320px)" [imgixParams]="{ fit: 'crop', ar: '1.5:1', w: 320 }"/> 
+  <img ixImg path="image.jpg" [imgixParams]="{ w: 100, fit: 'crop', ar: '3:1' }" />
+</picture>
+```
+<!-- prettier-ignore-end -->
 
 ### Advanced Examples
 
@@ -336,13 +381,14 @@ For advanced use cases which go above the basic usage outlined above, such as la
 In some situations, you might want to pass the generated src and srcset to other attributes, such `data-src`. You can do that like this:
 
 ```html
-<ix-img
-  src="image.jpg"
+<img
+  ixImg
+  path="image.jpg"
   [attributeConfig]="{ 
     src: 'data-src', 
     srcset: 'data-srcset' 
   }"
-></ix-img>
+/>
 ```
 
 Which will generate HTML as follows:
@@ -359,12 +405,13 @@ Which will generate HTML as follows:
 All imgix parameter values (with the exception of auto and ch) can be encoded using a URL-safe Base64 scheme. This client library has automatic base64 encoding for any imgix parameter that ends in 64. For example, to encode `txt`, just use `txt64`.
 
 ```html
-<ix-img
-  src="image.jpg"
+<img
+  ixImg
+  path="image.jpg"
   [imgixParams]="{ 
     txt64: 'Oh hello, world'
   }"
-></ix-img>
+/>
 ```
 
 becomes:
