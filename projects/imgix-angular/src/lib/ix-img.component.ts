@@ -63,8 +63,6 @@ export class IxImgComponent implements AfterViewChecked {
   }
   private _disableVariableQuality: boolean = false;
 
-  @Input() htmlAttributes?: Record<string, string>;
-
   constructor(
     @Inject(ImgixConfigService) private config: ImgixConfig,
     private elementRef: ElementRef<HTMLImageElement>,

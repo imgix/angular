@@ -52,37 +52,6 @@ const createComponent = (template: string) => {
   return TestComponent;
 };
 
-const renderWithProps = async ({
-  props,
-  config,
-}: {
-  props: Partial<IxImgComponent>;
-  config?: ImgixConfig;
-}) => {
-  const testid = genRandId();
-  const fixture = await render(IxImgComponent, {
-    imports: [
-      ImgixAngularModule.forRoot(
-        config ?? {
-          domain: 'assets.imgix.net',
-        },
-      ),
-    ],
-    componentProperties: {
-      ...props,
-      htmlAttributes: {
-        'data-testid': testid,
-      },
-    },
-    excludeComponentDeclaration: true,
-  });
-
-  return {
-    fixture,
-    el: screen.getByTestId(testid),
-  };
-};
-
 export const renderTemplate = async (
   template: string,
   config?: ImgixConfig,
