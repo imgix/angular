@@ -15,7 +15,7 @@ import { IImgixParams } from './types';
 @Injectable()
 @Component({
   // the [path] means that path is required
-  selector: '[ix-img][path]',
+  selector: '[ixImg][path]',
   // template: `<img [attr.height]="height" [attr.width]="width" #v />`,
   template: ``,
 })
