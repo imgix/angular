@@ -346,7 +346,7 @@ It is recommended to check out our [introduction blog post about how to best use
 
 ##### Fluid mode
 
-By default, the srcset values generated for are fluid-width srcsets, will respond with the actual size of your picture element page, as a fluid-width image would.
+By default, the srcset values generated are fluid-width srcsets. This allows them to respond with the actual size of your picture element on the page.
 
 <!-- prettier-ignore-start -->
 ```html
