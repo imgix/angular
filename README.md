@@ -53,7 +53,7 @@
 
 Below are some other articles that help explain responsive imagery, and how it can work alongside imgix:
 
-- [Using imgix with `<picture>`](https://docs.imgix.com/tutorials/usiangularPicture-element). Discusses the differences between art direction and resolution switching, and provides examples of how to accomplish art direction with imgix.
+- [Using imgix with `<picture>`](https://docs.imgix.com/tutorials/using-imgix-picture-element). Discusses the differences between art direction and resolution switching, and provides examples of how to accomplish art direction with imgix.
 - [Responsive Images with `srcset` and imgix](https://docs.imgix.com/tutorials/responsive-images-srcset-imgix). A look into how imgix can work with `srcset` and `sizes` to serve the right image.
 
 ## Get Started
@@ -342,7 +342,7 @@ If you'd still like to use an event listener, we recommend using [lazysizes](htt
 
 With the picture element, images can be directed to have different crops and sizes based on the browser dimensions, or any media query.
 
-It is recommended to check out our [introduction blog post about how to best use picture and the imgix API](https://docs.imgix.com/tutorials/usiangularPicture-element) for some great tips and examples!
+It is recommended to check out our [introduction blog post about how to best use picture and the imgix API](https://docs.imgix.com/tutorials/using-imgix-picture-element) for some great tips and examples!
 
 ##### Fluid mode
 
