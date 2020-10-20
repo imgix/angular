@@ -1,8 +1,8 @@
 export const stringMatchingFixedSrcSet = (width: number) =>
   jasmine.stringMatching(new RegExp(`.*w=${width}&.*dpr=1.* 1x,`));
 
-export const stringMatchingFixedSrcSetHeight = (heigh: number) =>
-  jasmine.stringMatching(new RegExp(`.*h=${heigh}&.*dpr=1.* 1x,`));
+export const stringMatchingFixedSrcSetHeight = (height: number) =>
+  jasmine.stringMatching(new RegExp(`.*h=${height}&.*dpr=1.* 1x,`));
 
 export const expectSrcSetToBeFixed = (
   srcset: string | null | undefined,
