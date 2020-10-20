@@ -87,7 +87,7 @@ describe('Picture mode', () => {
 
         expect(firstQuality).not.toBe(lastQuality);
       });
-      it('the srcset should have a variable quality when disableVariableQuality attribute set', async () => {
+      it('the srcset should not have a variable quality when disableVariableQuality attribute set', async () => {
         const test = await renderSourceTemplate(
           `<source ixSource path="amsterdam.jpg" [imgixParams]="{w: 100}" disableVariableQuality />`,
         );
