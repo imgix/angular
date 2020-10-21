@@ -54,7 +54,7 @@
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "cp ../../README.md . && ng build imgix-angular"
+          "prepareCmd": "cp ../../README.md . && ../../node_modules/.bin/ng build imgix-angular"
         }
       ],
       "@semantic-release/changelog",
