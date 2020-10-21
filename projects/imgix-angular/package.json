@@ -3,6 +3,10 @@
   "version": "1.0.0-rc.1",
   "license": "BSD-2-Clause",
   "peerDependencies": {},
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "imgix-core-js": "2.3.1",
     "imgix-url-params": "^11.9.1",
@@ -51,14 +55,19 @@
           ]
         }
       ],
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "dist"
+        }
+      ],
       [
         "@semantic-release/exec",
         {
           "prepareCmd": "cp ../../README.md . && ../../node_modules/.bin/ng build imgix-angular"
         }
       ],
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
       [
         "@semantic-release/git",
         {
