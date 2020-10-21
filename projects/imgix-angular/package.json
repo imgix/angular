@@ -34,13 +34,13 @@
           "replacements": [
             {
               "files": [
-                "src/lib/common/constants.ts"
+                "src/common/constants.ts"
               ],
               "from": "IMGIX_NG_VERSION: string = '.*'",
               "to": "IMGIX_NG_VERSION: string = '${nextRelease.version}'",
               "results": [
                 {
-                  "file": "src/lib/common/constants.ts",
+                  "file": "src/common/constants.ts",
                   "hasChanged": true,
                   "numMatches": 1,
                   "numReplacements": 1
