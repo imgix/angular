@@ -1,6 +1,6 @@
 {
   "name": "@imgix/angular",
-  "version": "1.0.0-rc.1",
+  "version": "0.0.1",
   "license": "BSD-2-Clause",
   "peerDependencies": {},
   "dependencies": {
@@ -83,5 +83,13 @@
         }
       ]
     ]
-  }
+  },
+  "main": "bundles/imgix-angular.umd.js",
+  "module": "fesm2015/imgix-angular.js",
+  "es2015": "fesm2015/imgix-angular.js",
+  "esm2015": "esm2015/imgix-angular.js",
+  "fesm2015": "fesm2015/imgix-angular.js",
+  "typings": "imgix-angular.d.ts",
+  "metadata": "imgix-angular.metadata.json",
+  "sideEffects": false
 }
