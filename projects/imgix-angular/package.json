@@ -59,7 +59,7 @@
       [
         "@semantic-release/npm",
         {
-          "pkgRoot": "./dist"
+          "pkgRoot": "./projects/imgix-angular/dist"
         }
       ],
       [
