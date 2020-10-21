@@ -1,0 +1,55 @@
+<div>
+  <style>
+    img {
+      width: 1000px;
+    }
+  </style>
+  <img
+    ixImg
+    path="unsplash/motorbike.jpg"
+    [imgixParams]="{ fit: 'crop' }"
+    fixed
+    [width]="50"
+    [height]="25"
+  />
+  <picture ixPicture>
+    <source
+      ixSource
+      path="amsterdam.jpg"
+      media="(min-width: 768px)"
+      [imgixParams]="{ fit: 'crop', ar: '1:1' }"
+    />
+    <source
+      ixSource
+      path="amsterdam.jpg"
+      media="(min-width: 320px)"
+      [imgixParams]="{ fit: 'crop', ar: '0.5:1' }"
+    />
+    <img
+      ixImg
+      path="amsterdam.jpg"
+      [imgixParams]="{ w: 100, fit: 'crop', ar: '4:1' }"
+      [htmlAttributes]="{ class: 'picture-img' }"
+    />
+  </picture>
+  <picture>
+    <source
+      ixSource
+      path="amsterdam.jpg"
+      media="(min-width: 768px)"
+      [imgixParams]="{ fit: 'crop', ar: '2:1', w: 768 }"
+    />
+    <source
+      ixSource
+      path="amsterdam.jpg"
+      media="(min-width: 320px)"
+      [imgixParams]="{ fit: 'crop', ar: '1.5:1', w: 320 }"
+    />
+    <img
+      ixImg
+      path="unsplash/motorbike.jpg"
+      [imgixParams]="{ w: 100 }"
+      sizes="100px"
+    />
+  </picture>
+</div>

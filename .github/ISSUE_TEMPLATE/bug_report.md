@@ -4,7 +4,6 @@ about: Create a report to help us improve
 title: ''
 labels: bug
 assignees: ''
-
 ---
 
 Please provide the following information and someone from @imgix/imgix-sdk-team will respond to your issue shortly.
@@ -22,7 +21,8 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Information:**
- - ng-imgix version: [e.g. 1.0.0]
+
+- @imgix/angular version: [e.g. 1.0.0]
 
 **Additional context**
 Add any other context about the problem here.

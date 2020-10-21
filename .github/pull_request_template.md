@@ -1,5 +1,5 @@
 <!--
-Hello, and thanks for contributing to ng-imgix! 🎉🙌
+Hello, and thanks for contributing to @imgix/angular! 🎉🙌
 Please take a second to fill out PRs with the following template!
 -->
 
@@ -7,7 +7,7 @@ Please take a second to fill out PRs with the following template!
 
 <!-- What is accomplished by this PR? If there is something potentially controversial in your PR, please take a moment to tell us about your choices. -->
 
-<!-- 
+<!--
 Please use the checklist that is most closely related to your PR, and delete the other checklists. -->
 
 ## Checklist: Fixing typos/Doc change
@@ -27,7 +27,7 @@ Please use the checklist that is most closely related to your PR, and delete the
 
 - [ ] Each commit follows the [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) format: e.g. `chore(readme): fixed typo`. See the end of this file for more information.
 - [ ] Any breaking changes are specified on the commit on which they are introduced with `BREAKING CHANGE` in the body of the commit.
-- [ ] If this is a big feature with breaking changes, consider [opening an issue](https://github.com/imgix/ng-imgix/issues/new?assignees=&labels=&template=feature_request.md&title=) to discuss first. This is completely up to you, but please keep in mind that your PR might not be accepted.
+- [ ] If this is a big feature with breaking changes, consider [opening an issue](https://github.com/imgix/angular/issues/new?assignees=&labels=&template=feature_request.md&title=) to discuss first. This is completely up to you, but please keep in mind that your PR might not be accepted.
 - [ ] Run unit tests to ensure all existing tests are still passing
 - [ ] Add new passing unit tests to cover the code introduced by your PR
 - [ ] Update the readme
