@@ -1,3 +1,4 @@
+import { IMGIX_NG_VERSION } from '../common/constants';
 import {
   expectSrcSetToBeFixed,
   expectSrcSetToBeFluid,
@@ -114,9 +115,10 @@ describe('Picture mode', () => {
           `<source ixSource path="amsterdam.jpg"  />`,
         );
 
-        const packageVersion = require('../../package.json').version;
+        const targetVersion = IMGIX_NG_VERSION;
+
         const expectIxlibParam = expectURLToHaveIxlibParam(
-          `ng-${packageVersion}`,
+          `ng-${targetVersion}`,
         );
 
         const component = test.getComponent();
