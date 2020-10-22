@@ -211,7 +211,7 @@ This will generate an image element like:
 ```
 <!-- prettier-ignore-end -->
 
-Fixed image rendering will automatically append a variable `q` parameter mapped to each `dpr` parameter when generating a srcset. This technique is commonly used to compensate for the increased filesize of high-DPR images. Since high-DPR images are displayed at a higher pixel density on devices, image quality can be lowered to reduce overall filesize without sacrificing perceived visual quality. For more information and examples of this technique in action, see [this blog post](https://blog.imgix.com/2016/03/30/dpr-quality).
+Fixed image rendering will automatically append a variable `q` parameter mapped to each `dpr` parameter when generating a srcset. This technique is commonly used to compensate for the increased file size of high-DPR images. Since high-DPR images are displayed at a higher pixel density on devices, image quality can be lowered to reduce the overall file size without sacrificing perceived visual quality. For more information and examples of this technique in action, see [this blog post](https://blog.imgix.com/2016/03/30/dpr-quality).
 This behavior will respect any overriding `q` value passed in via `imgixParams` and can be disabled altogether with the boolean property `disableVariableQuality`.
 
 ```html
@@ -288,7 +288,7 @@ export class LazyloadDirective implements AfterViewChecked {
 
 ```
 
-That's all the setup we need to do! Now there's a `lazy-img` directive available for us to use on our images! So let's do that. To use this directive with `ixImg`, make sure you're using `attribute-config` to redirect the src and srcset to `data-src` and `data-srcset`, which will be picked up either by Lozad, or the code we just wrote before.
+That's all the set-up we need to do! Now there's a `lazy-img` directive available for us to use on our images! So let's do that. To use this directive with `ixImg`, make sure you're using `attribute-config` to redirect the src and srcset to `data-src` and `data-srcset`, which will be picked up either by Lozad, or the code we just wrote before.
 
 ```jsx
 <img
