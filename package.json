@@ -9,7 +9,9 @@
     "test-headless": "ng test imgix-angular --no-watch --no-progress --browsers=ChromeHeadlessCI,FirefoxHeadless",
     "pretty": "prettier --write 'projects/**/*.ts'",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ensure-dist-package-json-exists": "mkdir projects/imgix-angular/dist -p && cp projects/imgix-angular/package.json projects/imgix-angular/dist/",
+    "publish-semantic-release": "npm run ensure-dist-package-json-exists &&  cd projects/imgix-angular && npx semantic-release"
   },
   "workspaces": [
     "projects/*"

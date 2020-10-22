@@ -1,6 +1,6 @@
 {
   "name": "@imgix/angular",
-  "version": "1.0.0-rc.1",
+  "version": "0.0.0-semantically-released",
   "license": "BSD-2-Clause",
   "peerDependencies": {},
   "private": false,
@@ -59,7 +59,7 @@
       [
         "@semantic-release/npm",
         {
-          "pkgRoot": "./projects/imgix-angular/dist"
+          "pkgRoot": "./dist"
         }
       ],
       [
