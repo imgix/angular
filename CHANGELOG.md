@@ -1,3 +1,5 @@
+# [1.0.0-rc.2](https://github.com/imgix/angular/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2020-10-22)
+
 # 1.0.0-rc.1 (2020-10-21)
 
 
