@@ -30,7 +30,7 @@ deploy:
   script:
     - npm run publish-semantic-release
   on:
-    branch: next
+    all_branches: true
 
 branches:
   only:
