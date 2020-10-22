@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ensure-dist-package-json-exists": "mkdir projects/imgix-angular/dist -p && cp projects/imgix-angular/package.json projects/imgix-angular/dist/",
-    "publish-semantic-release": "npm run ensure-dist-package-json-exists &&  cd projects/imgix-angular && npx semantic-release"
+    "publish-semantic-release": "npm run ensure-dist-package-json-exists && npx semantic-release"
   },
   "workspaces": [
     "projects/*"
@@ -61,5 +61,95 @@
     "ts-node": "9.0.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.3"
+  },
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "next",
+        "prerelease": "rc"
+      },
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "releaseRules": [
+            {
+              "type": "docs",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      [
+        "@google/semantic-release-replace-plugin",
+        {
+          "replacements": [
+            {
+              "files": [
+                "projects/imgix-angular/src/common/constants.ts"
+              ],
+              "from": "IMGIX_NG_VERSION: string = '.*'",
+              "to": "IMGIX_NG_VERSION: string = '${nextRelease.version}'",
+              "results": [
+                {
+                  "file": "projects/imgix-angular/src/common/constants.ts",
+                  "hasChanged": true,
+                  "numMatches": 1,
+                  "numReplacements": 1
+                }
+              ],
+              "countMatches": true
+            }
+          ]
+        }
+      ],
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./projects/imgix-angular/dist"
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "cp README.md projects/imgix-angular/ &&  ./node_modules/.bin/ng build imgix-angular"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "project/imgix-angular/src/**",
+            "project/imgix-angular/dist/**",
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes} [skip ci]"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "projects/imgix-angular/dist/bundles/imgix-angular.umd.min.js",
+              "label": "Standalone browser build"
+            }
+          ]
+        }
+      ]
+    ]
   }
 }
