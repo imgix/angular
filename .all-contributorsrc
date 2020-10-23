@@ -6,16 +6,6 @@
   "commit": false,
   "contributors": [
     {
-      "login": "sherwinski",
-      "name": "sherwinski",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/15919091?v=4",
-      "profile": "https://github.com/sherwinski",
-      "contributions": [
-        "maintenance",
-        "code"
-      ]
-    },
-    {
       "login": "frederickfogerty",
       "name": "Frederick Fogerty",
       "avatar_url": "https://avatars0.githubusercontent.com/u/615334?v=4",
@@ -24,6 +14,16 @@
         "code",
         "maintenance",
         "doc"
+      ]
+    },
+    {
+      "login": "sherwinski",
+      "name": "sherwinski",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15919091?v=4",
+      "profile": "https://github.com/sherwinski",
+      "contributions": [
+        "maintenance",
+        "code"
       ]
     }
   ],
