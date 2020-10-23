@@ -3,72 +3,73 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-imgix": {
+    "imgix-angular": {
       "projectType": "library",
-      "root": "projects/ng-imgix",
-      "sourceRoot": "projects/ng-imgix/src",
+      "root": "projects/imgix-angular",
+      "sourceRoot": "projects/imgix-angular/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ng-imgix/tsconfig.lib.json",
-            "project": "projects/ng-imgix/ng-package.json"
+            "tsConfig": "projects/imgix-angular/tsconfig.lib.json",
+            "project": "projects/imgix-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/imgix-angular/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-imgix/src/test.ts",
-            "tsConfig": "projects/ng-imgix/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-imgix/karma.conf.js"
+            "main": "projects/imgix-angular/src/test.ts",
+            "tsConfig": "projects/imgix-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/imgix-angular/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-imgix/tsconfig.lib.json",
-              "projects/ng-imgix/tsconfig.spec.json"
+              "projects/imgix-angular/tsconfig.lib.json",
+              "projects/imgix-angular/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "ng-imgix-example": {
+    "imgix-angular-example": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/ng-imgix-example",
-      "sourceRoot": "projects/ng-imgix-example/src",
+      "root": "projects/imgix-angular-example",
+      "sourceRoot": "projects/imgix-angular-example/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-imgix-example",
-            "index": "projects/ng-imgix-example/src/index.html",
-            "main": "projects/ng-imgix-example/src/main.ts",
-            "polyfills": "projects/ng-imgix-example/src/polyfills.ts",
-            "tsConfig": "projects/ng-imgix-example/tsconfig.app.json",
-            "aot": false,
+            "outputPath": "dist/imgix-angular-example",
+            "index": "projects/imgix-angular-example/src/index.html",
+            "main": "projects/imgix-angular-example/src/main.ts",
+            "polyfills": "projects/imgix-angular-example/src/polyfills.ts",
+            "tsConfig": "projects/imgix-angular-example/tsconfig.app.json",
+            "aot": true,
             "assets": [
-              "projects/ng-imgix-example/src/favicon.ico",
-              "projects/ng-imgix-example/src/assets"
+              "projects/imgix-angular-example/src/favicon.ico",
+              "projects/imgix-angular-example/src/assets"
             ],
-            "styles": [
-              "projects/ng-imgix-example/src/styles.css"
-            ],
+            "styles": ["projects/imgix-angular-example/src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/ng-imgix-example/src/environments/environment.ts",
-                  "with": "projects/ng-imgix-example/src/environments/environment.prod.ts"
+                  "replace": "projects/imgix-angular-example/src/environments/environment.ts",
+                  "with": "projects/imgix-angular-example/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -76,7 +77,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -98,34 +98,32 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-imgix-example:build"
+            "browserTarget": "imgix-angular-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-imgix-example:build:production"
+              "browserTarget": "imgix-angular-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-imgix-example:build"
+            "browserTarget": "imgix-angular-example:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-imgix-example/src/test.ts",
-            "polyfills": "projects/ng-imgix-example/src/polyfills.ts",
-            "tsConfig": "projects/ng-imgix-example/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-imgix-example/karma.conf.js",
+            "main": "projects/imgix-angular-example/src/test.ts",
+            "polyfills": "projects/imgix-angular-example/src/polyfills.ts",
+            "tsConfig": "projects/imgix-angular-example/tsconfig.spec.json",
+            "karmaConfig": "projects/imgix-angular-example/karma.conf.js",
             "assets": [
-              "projects/ng-imgix-example/src/favicon.ico",
-              "projects/ng-imgix-example/src/assets"
+              "projects/imgix-angular-example/src/favicon.ico",
+              "projects/imgix-angular-example/src/assets"
             ],
-            "styles": [
-              "projects/ng-imgix-example/src/styles.css"
-            ],
+            "styles": ["projects/imgix-angular-example/src/styles.css"],
             "scripts": []
           }
         },
@@ -133,28 +131,30 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-imgix-example/tsconfig.app.json",
-              "projects/ng-imgix-example/tsconfig.spec.json",
-              "projects/ng-imgix-example/e2e/tsconfig.json"
+              "projects/imgix-angular-example/tsconfig.app.json",
+              "projects/imgix-angular-example/tsconfig.spec.json",
+              "projects/imgix-angular-example/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/ng-imgix-example/e2e/protractor.conf.js",
-            "devServerTarget": "ng-imgix-example:serve"
+            "protractorConfig": "projects/imgix-angular-example/e2e/protractor.conf.js",
+            "devServerTarget": "imgix-angular-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-imgix-example:serve:production"
+              "devServerTarget": "imgix-angular-example:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "ng-imgix"
+    }
+  },
+  "defaultProject": "imgix-angular",
+  "cli": {
+    "analytics": "91ca18e9-733d-4ac3-8814-d3890ed0d416"
+  }
 }

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "./dist",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "imgix-core-js": "imgix-core-js",
+      "urijs": "urijs"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "imgix-core-js",
+    "urijs",
+    "imgix-url-params"
+  ]
+}

@@ -7,26 +7,19 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
+    "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
     "allowSyntheticDefaultImports": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "ng-imgix": [
-        "dist/ng-imgix"
-      ],
-      "ng-imgix/*": [
-        "dist/ng-imgix/*"
-      ]
-    }
+      "@imgix/angular": ["projects/imgix-angular/dist"],
+      "@imgix/angular/*": ["dist/imgix-angular/*"]
+    },
+    "skipLibCheck": true,
+    "resolveJsonModule": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

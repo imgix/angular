@@ -1,25 +1,39 @@
 dist: trusty
-sudo: false
 
 language: node_js
 node_js:
-  - '10.9'
-  - '12.0'
-  - '13.0'
+  - stable
 
 addons:
   chrome: stable
   firefox: latest
 
 cache:
+  yarn: true
   directories:
     - ./node_modules
 
 before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s
+  - export PATH=$HOME/.yarn/bin:$PATH
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 install:
-  - npm install
+  - yarn
 
 script:
-  - npm run test-headless
+  - yarn run test-headless
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - npm run publish-semantic-release
+  on:
+    all_branches: true
+
+branches:
+  only:
+    - main
+    - next
+    - /^v.*$/
