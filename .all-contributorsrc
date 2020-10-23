@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "sherwinski",
+      "name": "sherwinski",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15919091?v=4",
+      "profile": "https://github.com/sherwinski",
+      "contributions": [
+        "maintenance",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "angular",
+  "projectOwner": "imgix",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
