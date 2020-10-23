@@ -1447,10 +1447,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@phenomnomnominal/tsquery@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@phenomnomnominal/tsquery/-/tsquery-3.0.0.tgz#6f2f4dbf6304ff52b12cc7a5b979f20c3794a22a"
-  integrity sha512-SW8lKitBHWJ9fAYkJ9kJivuctwNYCh3BUxLdH0+XiR1GPBiu+7qiZzh8p8jqlj1LgVC1TbvfNFroaEsmYlL8Iw==
+"@phenomnomnominal/tsquery@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@phenomnomnominal/tsquery/-/tsquery-4.1.1.tgz#42971b83590e9d853d024ddb04a18085a36518df"
+  integrity sha512-jjMmK1tnZbm1Jq5a7fBliM4gQwjxMU7TFoRNwIyzwlO+eHPRCFv/Nv+H/Gi1jc3WR7QURG8D5d0Tn12YGrUqBQ==
   dependencies:
     esquery "^1.0.1"
 
@@ -1629,12 +1629,12 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@testing-library/angular@10.0.2":
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-10.0.2.tgz#4ac45ebd3e0ed0684d1df9858cbff61d411dd5ed"
-  integrity sha512-GpOam/hE2zHIVglebYoQqA/KEKYqZTE4WXRkY2e/opb05PpiKY1wbuZ90QQFm0NFfbhZ/zK7lNUkmPCul8sm5A==
+"@testing-library/angular@10.1.2":
+  version "10.1.2"
+  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-10.1.2.tgz#8725c9922456ec6e17bc722baca89b2f9854aa8a"
+  integrity sha512-5UHscjhTJVFxvQcMAExFliQbB/WA7kzIjoPsCNk49Og9PyhcEvaXzrFAoKO6YkAA4/8XFTQkv1lJEQqKQlsY0g==
   dependencies:
-    "@phenomnomnominal/tsquery" "^3.0.0"
+    "@phenomnomnominal/tsquery" "^4.1.1"
     "@testing-library/dom" "^7.18.1"
     tslib "^2.0.0"
     tslint "^5.16.0"
