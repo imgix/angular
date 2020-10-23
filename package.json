@@ -10,7 +10,7 @@
     "pretty": "prettier --write 'projects/**/*.ts'",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ensure-dist-package-json-exists": "mkdir projects/imgix-angular/dist -p && cp projects/imgix-angular/package.json projects/imgix-angular/dist/",
+    "ensure-dist-package-json-exists": "mkdir -p projects/imgix-angular/dist && cp projects/imgix-angular/package.json projects/imgix-angular/dist/",
     "publish-semantic-release": "npm run ensure-dist-package-json-exists && npx semantic-release"
   },
   "workspaces": [
