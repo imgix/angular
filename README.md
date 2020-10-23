@@ -1,6 +1,6 @@
 <!-- ix-docs-ignore -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![imgix logo](https://assets.imgix.net/sdk-imgix-logo.svg)
@@ -460,6 +460,7 @@ Contributions are a vital part of this library and imgix's commitment to open-so
 <table>
   <tr>
     <td align="center"><a href="https://github.com/sherwinski"><img src="https://avatars3.githubusercontent.com/u/15919091?v=4" width="100px;" alt=""/><br /><sub><b>sherwinski</b></sub></a><br /><a href="#maintenance-sherwinski" title="Maintenance">🚧</a> <a href="https://github.com/imgix/angular/commits?author=sherwinski" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/frederickfogerty"><img src="https://avatars0.githubusercontent.com/u/615334?v=4" width="100px;" alt=""/><br /><sub><b>Frederick Fogerty</b></sub></a><br /><a href="https://github.com/imgix/angular/commits?author=frederickfogerty" title="Code">💻</a> <a href="#maintenance-frederickfogerty" title="Maintenance">🚧</a> <a href="https://github.com/imgix/angular/commits?author=frederickfogerty" title="Documentation">📖</a></td>
   </tr>
 </table>
 
