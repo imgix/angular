@@ -91,6 +91,12 @@
       ],
       "@semantic-release/release-notes-generator",
       [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "cp README.md projects/imgix-angular/ &&  ./node_modules/.bin/ng build imgix-angular"
+        }
+      ],
+      [
         "@google/semantic-release-replace-plugin",
         {
           "replacements": [
@@ -118,12 +124,6 @@
         "@semantic-release/npm",
         {
           "pkgRoot": "./projects/imgix-angular/dist"
-        }
-      ],
-      [
-        "@semantic-release/exec",
-        {
-          "prepareCmd": "cp README.md projects/imgix-angular/ &&  ./node_modules/.bin/ng build imgix-angular"
         }
       ],
       [
