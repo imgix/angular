@@ -85,6 +85,11 @@
             {
               "type": "docs",
               "release": "patch"
+            },
+            {
+              "type": "chore",
+              "scope": "deps",
+              "release": "patch"
             }
           ]
         }

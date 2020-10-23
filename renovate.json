@@ -22,6 +22,14 @@
       ],
       "updateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "depTypeList": ["dependencies", "peerDependencies"],
+      "semanticCommitScope": "deps"
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "semanticCommitScope": "dev-deps"
     }
   ]
 }
