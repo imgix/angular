@@ -2,7 +2,7 @@
 
 ![imgix logo](https://assets.imgix.net/sdk-imgix-logo.svg)
 
-`@imgix/angular` is a client library for generating URLs with [imgix](https://www.imgix.com/).
+`@imgix/angular` provides custom components for integrating [imgix](https://www.imgix.com/) into Angular applications.
 
 [![npm version](https://img.shields.io/npm/v/@imgix/angular.svg)](https://www.npmjs.com/package/@imgix/angular)
 [![Build Status](https://travis-ci.org/imgix/angular.svg?branch=main)](https://travis-ci.org/imgix/angular)
