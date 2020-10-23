@@ -1,3 +1,10 @@
+# [1.0.0-rc.3](https://github.com/imgix/angular/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2020-10-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency imgix-core-js to v2.3.2 ([27869fd](https://github.com/imgix/angular/commit/27869fd3ab13066c0467bd16d96c3a9529a03613))
+
 # [1.0.0-rc.2](https://github.com/imgix/angular/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2020-10-22)
 
 # 1.0.0-rc.1 (2020-10-21)
