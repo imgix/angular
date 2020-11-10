@@ -1,7 +1,6 @@
 {
   "name": "imgix-angular-workspace",
   "version": "0.0.0",
-  "description": "A library that provides custom components for integrating imgix into Angular applications",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

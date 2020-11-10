@@ -1,6 +1,32 @@
 {
   "name": "@imgix/angular",
   "version": "0.0.0-semantically-released",
+  "description": "A library that provides custom components for integrating imgix into Angular applications",
+  "author": "Frederick Fogerty <frederick.fogerty@gmail.com> (https://github.com/frederickfogerty)",
+  "contributors": [
+    "Frederick Fogerty <frederick.fogerty@gmail.com> (https://github.com/frederickfogerty)",
+    "Sherwin Heydarbeygi <sherwin@imgix.com> (https://github.com/sherwinski)"
+  ],
+  "keywords": [
+    "angular",
+    "imgix",
+    "component",
+    "ng-imgix",
+    "imgix-ng",
+    "responsive",
+    "srcset",
+    "img",
+    "picture",
+    "dynamic"
+  ],
+  "homepage": "https://github.com/imgix/angular#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imgix/angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imgix/angular/issues"
+  },
   "license": "BSD-2-Clause",
   "peerDependencies": {},
   "private": false,
