@@ -23,6 +23,8 @@ If applicable, add screenshots to help explain your problem.
 **Information:**
 
 - @imgix/angular version: [e.g. 1.0.0]
+- Angular version: 
+- Rendering Engine - View Engine or Ivy?
 
 **Additional context**
 Add any other context about the problem here.
