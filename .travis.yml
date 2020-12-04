@@ -2,6 +2,7 @@ dist: trusty
 
 language: node_js
 node_js:
+  - lts/*
   - stable
 
 addons:
