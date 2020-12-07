@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/imgix/angular/compare/v1.0.2...v1.1.0) (2020-12-07)
+
+
+### Features
+
+* upgrade to angular v11 ([5ab1b75](https://github.com/imgix/angular/commit/5ab1b75ebd3725d016b027758689278330500aa9))
+
 ## [1.0.2](https://github.com/imgix/angular/compare/v1.0.1...v1.0.2) (2020-11-10)
 
 ## [1.0.1](https://github.com/imgix/angular/compare/v1.0.0...v1.0.1) (2020-10-23)
