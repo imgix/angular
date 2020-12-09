@@ -2327,10 +2327,10 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@testing-library/angular@10.2.1":
-  version "10.2.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-10.2.1.tgz#e267f53d1067001b79de6c7730b629608f4065e5"
-  integrity sha512-JoPkxdbZa4XBy8H9JS8J9wHROBuuOPyTobNDV/HPl85SMdVPPkr6GtlhwyFo69i03KXUVOUtQimJidPBYw1jpw==
+"@testing-library/angular@10.3.0":
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-10.3.0.tgz#d2f46ddd3fd50155a8e5aaf991d0658415c50c14"
+  integrity sha512-T3ANurmrmDYRwnmrPOL/GfuEjEqDahXUZQilcLrMOsc23uw4dqwZXdllOiG7QcceRRsSCY8O9PZuOYnlvPuTYQ==
   dependencies:
     "@phenomnomnominal/tsquery" "^4.1.1"
     "@testing-library/dom" "^7.18.1"
