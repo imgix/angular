@@ -28,7 +28,6 @@
     "url": "https://github.com/imgix/angular/issues"
   },
   "license": "BSD-2-Clause",
-  "peerDependencies": {},
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -38,5 +37,10 @@
     "imgix-url-params": "^11.9.1",
     "tslib": "^2.0.2",
     "urijs": "1.19.3"
+  },
+  "peerDependencies": {
+    "@angular/common": "8.x || 9.x || 10.x || 11.x",
+    "@angular/core": "8.x || 9.x || 10.x || 11.x",
+    "@angular/platform-browser": "8.x || 9.x || 10.x || 11.x"
   }
 }
