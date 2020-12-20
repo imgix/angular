@@ -37,6 +37,6 @@
     "imgix-core-js": "2.3.1",
     "imgix-url-params": "^11.9.1",
     "tslib": "^2.0.2",
-    "urijs": "1.19.2"
+    "urijs": "1.19.3"
   }
 }
