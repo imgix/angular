@@ -2455,10 +2455,10 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@testing-library/angular@10.3.1":
-  version "10.3.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-10.3.1.tgz#71696c2c0ea6fd691505e1c6c4966ef45419e012"
-  integrity sha512-ZIyxgyWEfuvFLDlu1FVoWqH5bSCk7m0XU78KE7M4XAW9LE8mGCpeTEIstLW/t8Y8oK83JWy81mpyDFkRJsjWmw==
+"@testing-library/angular@10.3.2":
+  version "10.3.2"
+  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-10.3.2.tgz#5ae47abc34c01e8fe12e1ebf7093ba21f886965e"
+  integrity sha512-XVIIO5wKKp2l0UEjwxBpQECnVahWzbLq1O3GoCCAaasQaFwLSnqXPaPZE4UWWM2ebZ9BnFeB9xetHpQup7AiPQ==
   dependencies:
     "@phenomnomnominal/tsquery" "^4.1.1"
     "@testing-library/dom" "^7.18.1"
