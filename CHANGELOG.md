@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/imgix/angular/compare/v1.1.2...v1.1.3) (2021-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency urijs to v1.19.5 ([80db99e](https://github.com/imgix/angular/commit/80db99e9dd162c82ebd145558584ec7433db6913))
+
 ## [1.1.2](https://github.com/imgix/angular/compare/v1.1.1...v1.1.2) (2021-02-05)
 
 
