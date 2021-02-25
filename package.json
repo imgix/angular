@@ -52,7 +52,7 @@
     "ng-packagr": "11.2.4",
     "prettier": "2.2.1",
     "protractor": "7.0.0",
-    "rxjs": "6.6.3",
+    "rxjs": "6.6.6",
     "semantic-release": "17.3.9",
     "ts-node": "9.1.1",
     "tslib": "2.1.0",
