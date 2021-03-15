@@ -32,9 +32,3 @@ deploy:
     - npm run publish-semantic-release
   on:
     all_branches: true
-
-branches:
-  only:
-    - main
-    - next
-    - /^v.*$/
