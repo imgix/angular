@@ -1,12 +1,5 @@
 {
-  "extends": ["config:js-lib"],
-  "automerge": false,
-  "patch": {
-    "automerge": true
-  },
-  "devDependencies": {
-    "automerge": true
-  },
+  "extends": ["github>imgix/renovate-config"],
   "packageRules": [
     {
       "packagePatterns": [
@@ -24,9 +17,7 @@
       "enabled": false
     },
     {
-      "packagePatterns": [
-        "typescript"
-      ],
+      "packagePatterns": ["typescript"],
       "updateTypes": ["major", "minor"],
       "enabled": false
     }
