@@ -61,7 +61,7 @@ Below are some other articles that help explain responsive imagery, and how it c
 3. Add the module to your app module declaration (usually in `src/app/app.module.ts`):
 
 ```ts
-import { ImgixAngularModule } from '@ng/imgix';
+import { ImgixAngularModule } from '@imgix/angular';
 
 @NgModule({
   // ...
