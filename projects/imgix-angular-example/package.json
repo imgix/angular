@@ -5,7 +5,7 @@
   "license": "BSD-2-Clause",
   "private": true,
   "devDependencies": {
-    "@types/lozad": "1.9.0",
+    "@types/lozad": "1.16.1",
     "lozad": "1.16.0"
   }
 }

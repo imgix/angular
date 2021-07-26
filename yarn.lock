@@ -2073,10 +2073,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/lozad@1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@types/lozad/-/lozad-1.9.0.tgz#ff6df914f98a430347eb0a0a262382ac5c054a9c"
-  integrity sha512-G8vLv048DBkH3dkDwURnDnF24pohdK/OwKVU70LQw2lrgeSDz48x4x+GnlIcyeDW47iZ+rxQ5wkgNLe+FhdPWQ==
+"@types/lozad@1.16.1":
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/@types/lozad/-/lozad-1.16.1.tgz#fc06f73bfd787a456b0e12a9d83a954b56431400"
+  integrity sha512-wmGW368y1zu9ark/7fMNHdZ/c3wGV7fxoEqtK+V3Dsv2QGQQp34D9elDowuW12zZwxjO9NkNUorqg+D9j1VRGQ==
 
 "@types/minimatch@*":
   version "3.0.3"
