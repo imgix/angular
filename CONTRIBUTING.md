@@ -3,16 +3,16 @@
 NB: Each step has an accompanied one-liner. If these commands are pasted one after the other, they will set-up the project correctly.
 
 - Ensure your development environment includes all [prerequisites](https://angular.io/guide/setup-local) to build and run Angular applications.
-- Clone this repo  
+- Clone this repo
   One-liner: `$ git clone git@github.com:imgix/angular.git`
-- Build the `@imgix/angular` library using `ng build imgix-angular`. Note that the newly bundled files can be found under `project/imgix-angular/dist`.  
+- Build the `@imgix/angular` library using `ng build imgix-angular`. Note that the newly bundled files can be found under `project/imgix-angular/dist`.
   One-liner: `$ cd angular && npm install && ng build imgix-angular`
   One-liner (w/o global cli): `$ cd angular && npm install && npx -p @angular/cli ng build imgix-angular`
-- Navigate to `projects/imgix-angular/dist/` and run `npm link`.  
+- Navigate to `projects/imgix-angular/dist/` and run `npm link`.
   One-liner: `$ cd projects/imgix-angular/dist && npm link`
 - In a separate directory, create a new Angular application using `ng new example-app`. This is where `imgix-angular` can be tested.
   One-liner: `$ cd ../../../ && ng new example-app`
-- In this example app, run `npm link @imgix/angular`. This allows `@imgix/angular` to be used within the application.  
+- In this example app, run `npm link @imgix/angular`. This allows `@imgix/angular` to be used within the application.
   One-liner: `$ cd example-app && npm link @imgix/angular`
 - Modify the application's `app.module.ts` to import `@imgix/angular`:
 

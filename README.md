@@ -68,7 +68,7 @@ import { ImgixAngularModule } from '@imgix/angular';
   imports: [
     ImgixAngularModule.forRoot({
       domain: '<your source url, e.g. assets.imgix.net>',
-      defaultParams: {
+      defaultImgixParams: {
         // This enables the auto format and compress imgix parameters by default for all images, which we recommend to reduce image size, but you might choose to turn this off.
         auto: 'format,compress',
       },
