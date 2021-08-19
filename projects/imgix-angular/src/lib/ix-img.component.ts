@@ -1,5 +1,5 @@
 import {
-  AfterViewChecked,
+  AfterViewInit,
   Component,
   ElementRef,
   Inject,
@@ -18,7 +18,7 @@ import { IImgixParams } from './types';
   selector: '[ixImg][path]',
   template: ``,
 })
-export class IxImgComponent implements AfterViewChecked {
+export class IxImgComponent implements AfterViewInit {
   private readonly client: ImgixClient;
 
   @Input('path') path: string;
@@ -70,7 +70,7 @@ export class IxImgComponent implements AfterViewChecked {
     this.client = createImgixClient(this.config);
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
     this.setSrcAndSrcsetAttributes();
     this.setOtherAttributes();
   }
