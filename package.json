@@ -145,7 +145,7 @@
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "cp README.md projects/imgix-angular/ &&  ./node_modules/.bin/ng build imgix-angular"
+          "prepareCmd": "cp README.md projects/imgix-angular/ && ./node_modules/.bin/ng build imgix-angular"
         }
       ],
       [
@@ -156,8 +156,8 @@
               "files": [
                 "projects/imgix-angular/src/common/constants.ts"
               ],
-              "from": "IMGIX_NG_VERSION: string = '.*'",
-              "to": "IMGIX_NG_VERSION: string = '${nextRelease.version}'",
+              "from": "export const IMGIX_NG_VERSION: string = '.*'",
+              "to": "export const IMGIX_NG_VERSION: string = '${nextRelease.version}'",
               "results": [
                 {
                   "file": "projects/imgix-angular/src/common/constants.ts",
