@@ -1,3 +1,10 @@
+### [1.1.8-rc.1](https://github.com/imgix/angular/compare/v1.1.7...v1.1.8-rc.1) (2021-12-03)
+
+
+### Bug Fixes
+
+* **ix-img:** set directive attributes after view init ([4e93cf3](https://github.com/imgix/angular/commit/4e93cf35c25e53ee21734824cda23b9b88cb5edf))
+
 ### [1.1.7](https://github.com/imgix/angular/compare/v1.1.6...v1.1.7) (2021-08-13)
 
 ### [1.1.6](https://github.com/imgix/angular/compare/v1.1.5...v1.1.6) (2021-07-19)
