@@ -41,7 +41,7 @@
     "@types/jasminewd2": "2.0.10",
     "@types/node": "16.11.17",
     "codelyzer": "6.0.2",
-    "conventional-changelog-conventionalcommits": "4.6.1",
+    "conventional-changelog-conventionalcommits": "4.6.3",
     "jasmine-core": "3.10.1",
     "jasmine-spec-reporter": "5.0.2",
     "karma": "5.2.3",
