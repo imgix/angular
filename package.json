@@ -42,7 +42,7 @@
     "@types/node": "16.11.17",
     "codelyzer": "6.0.2",
     "conventional-changelog-conventionalcommits": "4.6.3",
-    "jasmine-core": "3.10.1",
+    "jasmine-core": "3.99.0",
     "jasmine-spec-reporter": "5.0.2",
     "karma": "5.2.3",
     "karma-chrome-launcher": "3.1.0",
