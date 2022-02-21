@@ -36,7 +36,7 @@
     "imgix-core-js": "2.3.2",
     "imgix-url-params": "^11.9.1",
     "tslib": "^2.0.2",
-    "urijs": "1.19.7"
+    "urijs": "1.19.8"
   },
   "peerDependencies": {
     "@angular/common": "8.x || 9.x || 10.x || 11.x",
