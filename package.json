@@ -39,7 +39,7 @@
     "@testing-library/angular": "10.5.0",
     "@types/jasmine": "3.10.3",
     "@types/jasminewd2": "2.0.10",
-    "@types/node": "16.11.17",
+    "@types/node": "16.11.26",
     "codelyzer": "6.0.2",
     "conventional-changelog-conventionalcommits": "4.6.3",
     "jasmine-core": "3.99.0",
