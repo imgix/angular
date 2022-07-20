@@ -58,6 +58,8 @@ export const renderTemplate = async (
 ) => {
   const componentObj = createComponentWithTestWrapper(template);
   const renderResult = await renderComponentWithImgixComponent(
+    //After testing-library update, TypeScript insists component is not a string, while typeof guarantees it as a string
+    //@ts-ignore
     componentObj.component,
     {
       declarations: [componentObj.component],
