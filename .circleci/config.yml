@@ -31,7 +31,7 @@ jobs:
             - run: echo 'export NODE_OPTIONS=--openssl-legacy-provider' >> $BASH_ENV
       - node/install-packages:
           pkg-manager: yarn
-      - run: yarn run test
+      - run: yarn run test-headless
 
   deploy:
     docker:
