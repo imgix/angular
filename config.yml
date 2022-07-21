@@ -1,0 +1,46 @@
+version: 2.1
+
+orbs: 
+  node: circleci/node@5.0.2
+  browser-tools: circleci/browser-tools@1.4.0
+
+jobs:
+  test:
+    parameters:
+      version: 
+        default: "stable"
+        description: Node.JS version to install
+        type: string
+    docker:
+      - image: cimg/node:<<parameters.version>>-browsers
+    resource_class: large
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+          steps:
+      - browser-tools/install-browser-tools
+      - run: yarn run test
+
+  deploy:
+    docker:
+      - image: cimg/node:current
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run: npx semantic-release
+
+workflows:
+  test:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              version:
+                - "current"
+                - "lts" 
+
+      - deploy:
+          requires:
+            - test
