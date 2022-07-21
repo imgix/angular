@@ -56,13 +56,18 @@
             "main": "projects/imgix-angular-example/src/main.ts",
             "polyfills": "projects/imgix-angular-example/src/polyfills.ts",
             "tsConfig": "projects/imgix-angular-example/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/imgix-angular-example/src/favicon.ico",
               "projects/imgix-angular-example/src/assets"
             ],
             "styles": ["projects/imgix-angular-example/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -92,7 +97,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
