@@ -18,7 +18,6 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
-          steps:
       - browser-tools/install-browser-tools
       - run: yarn run test
 
