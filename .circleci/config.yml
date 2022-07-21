@@ -19,6 +19,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - browser-tools/install-browser-tools
+      - run: echo 'export NODE_OPTIONS=--openssl-legacy-provider' >> $BASH_ENV
       - run: yarn run test
 
   deploy:
