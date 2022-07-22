@@ -30,7 +30,7 @@ jobs:
             # Prevents build error on stable node version
             - run: echo 'export NODE_OPTIONS=--openssl-legacy-provider' >> $BASH_ENV
       - node/install-packages:
-          pkg-manager: yarn
+          override-ci-command: yarn install
       - run: yarn run test-headless
 
   deploy:
@@ -39,7 +39,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
-          pkg-manager: yarn
+          override-ci-command: yarn install
       - run: npx semantic-release
 
 workflows:
