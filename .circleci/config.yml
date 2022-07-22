@@ -40,7 +40,7 @@ jobs:
       - checkout
       - node/install-packages:
           override-ci-command: yarn install
-      - run: npx semantic-release
+      - run: npm run publish-semantic-release
 
 workflows:
   test:
