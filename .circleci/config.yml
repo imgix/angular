@@ -32,6 +32,10 @@ jobs:
       - node/install-packages:
           override-ci-command: yarn install
       - run: yarn run test-headless
+      - run:
+          name: "Test whether build is succesful"
+          command: ng build
+
 
   deploy:
     docker:
