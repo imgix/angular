@@ -34,7 +34,7 @@ jobs:
       - run: yarn run test-headless
       - run:
           name: "Test whether build is succesful"
-          command: ng build
+          command: yarn build
 
 
   deploy:
