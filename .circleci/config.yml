@@ -33,7 +33,7 @@ jobs:
           override-ci-command: yarn install
       - run: yarn run test-headless
       - run:
-          name: "Test whether build is succesful"
+          name: "Test whether build is successful"
           command: yarn build
 
 
