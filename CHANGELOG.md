@@ -1,3 +1,10 @@
+### [1.1.9](https://github.com/imgix/angular/compare/v1.1.8...v1.1.9) (2022-07-26)
+
+
+### Bug Fixes
+
+* **deps:** rollback ng-packagr to 11.2.4 ([b77de59](https://github.com/imgix/angular/commit/b77de594b7213b1ebbd439b3add5b2e5475a71b7))
+
 ### [1.1.8](https://github.com/imgix/angular/compare/v1.1.7...v1.1.8) (2021-12-15)
 
 
