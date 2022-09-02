@@ -28,16 +28,6 @@
             "tsConfig": "projects/imgix-angular/tsconfig.spec.json",
             "karmaConfig": "projects/imgix-angular/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/imgix-angular/tsconfig.lib.json",
-              "projects/imgix-angular/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     },
@@ -130,17 +120,6 @@
             ],
             "styles": ["projects/imgix-angular-example/src/styles.css"],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/imgix-angular-example/tsconfig.app.json",
-              "projects/imgix-angular-example/tsconfig.spec.json",
-              "projects/imgix-angular-example/e2e/tsconfig.json"
-            ],
-            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
