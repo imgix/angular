@@ -1,3 +1,11 @@
+### [1.1.10](https://github.com/imgix/angular/compare/v1.1.9...v1.1.10) (2022-09-07)
+
+
+### Bug Fixes
+
+* **angular:** update library to angular 13 ([b193763](https://github.com/imgix/angular/commit/b19376303cb692a52a540381f749d9e9d0cb2e57))
+* **ng-package:** replaced deprecated whitelist function ([ec5407d](https://github.com/imgix/angular/commit/ec5407dff57d35da8361dc0697b9eca1226ff35e))
+
 ### [1.1.9](https://github.com/imgix/angular/compare/v1.1.8...v1.1.9) (2022-07-26)
 
 
