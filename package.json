@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "prepare": "ng build",
+    "prepublishOnly": "ng build",
     "test-headless": "ng test imgix-angular --no-watch --no-progress --browsers=ChromeHeadlessCI,FirefoxHeadless",
     "pretty": "prettier --write 'projects/**/*.ts'",
     "lint": "ng lint",
