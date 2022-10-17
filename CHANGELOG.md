@@ -1,3 +1,5 @@
+### [1.1.11](https://github.com/imgix/angular/compare/v1.1.10...v1.1.11) (2022-10-17)
+
 ### [1.1.10](https://github.com/imgix/angular/compare/v1.1.9...v1.1.10) (2022-09-07)
 
 
