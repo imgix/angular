@@ -1,16 +1,16 @@
 <!-- ix-docs-ignore -->
+> [DEPRECATED]
+> 
+> _This project has reached the end of its development. Feel free to browse the code, but please use other solutions for integrating imgix into your Angular projects_
 
 ![imgix logo](https://assets.imgix.net/sdk-imgix-logo.svg)
 
 `@imgix/angular` provides custom components for integrating [imgix](https://www.imgix.com/) into Angular applications.
 
 [![npm version](https://img.shields.io/npm/v/@imgix/angular.svg)](https://www.npmjs.com/package/@imgix/angular)
-[![Build Status](https://travis-ci.com/imgix/angular.svg?branch=main)](https://travis-ci.com/imgix/angular)
 [![Downloads](https://img.shields.io/npm/dm/@imgix/angular.svg)](https://www.npmjs.com/package/@imgix/angular)
 [![License](https://img.shields.io/npm/l/@imgix/angular)](https://github.com/imgix/angular/blob/main/LICENSE)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fimgix%2Fangular.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fimgix%2Fangular?ref=badge_shield)
-[![Dependencies Status](https://david-dm.org/imgix/angular.svg)](https://david-dm.org/imgix/angular)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
