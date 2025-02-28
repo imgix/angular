@@ -3675,10 +3675,10 @@
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.0.tgz#96116f2a912e0c02817345b3c10751069920d553"
   integrity sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==
 
-"@testing-library/angular@17.3.5":
-  version "17.3.5"
-  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-17.3.5.tgz#fa824c0fab3279b20db4adb630b110c7cd0fa5bc"
-  integrity sha512-B79mN7kNDY9/+0Kc6cVGnVptQ03oHVL1at1tMu44wvr7Ksk10g11lZw7BA0c7rHAJQoXgiWrXmvtJxkPA1R2uA==
+"@testing-library/angular@17.3.6":
+  version "17.3.6"
+  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-17.3.6.tgz#cbff8b249c111da85c89eb510939ebbc8a9c37f1"
+  integrity sha512-8LxEfNtjhd6iguWus8TQngMwXfw8Y4qPMXeeCqtxbIf7gbhnPA52R8ofiqCMy+p9cD/kMOY9KZAxj18P+5vNHw==
   dependencies:
     tslib "^2.3.1"
 
