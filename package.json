@@ -38,7 +38,7 @@
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/exec": "7.0.3",
     "@semantic-release/git": "10.0.1",
-    "@testing-library/angular": "17.3.6",
+    "@testing-library/angular": "17.3.7",
     "@types/jasmine": "5.1.7",
     "@types/jasminewd2": "2.0.13",
     "@types/node": "22.13.14",
