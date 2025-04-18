@@ -18,21 +18,21 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@angular-builders/common@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@angular-builders/common/-/common-3.0.0.tgz#ea09a89fba710884feb7bc83dc68d48013a11860"
-  integrity sha512-AACGMwlBFYF3PaFekgJDCmqO1hMBrK5eyjHMN5aqJk3PV46BhnlNcQEa9pftLUKxoGijXBQzlalDZkceatyoMw==
+"@angular-builders/common@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@angular-builders/common/-/common-3.0.1.tgz#6a9cfa466e5011934c8bd494cd4df93273072dea"
+  integrity sha512-AIIqWtlr3sc2+CTEOqbDsrpVvkT6ijfYzvzPk1HLFrcP9Y2tYLXVFc+gGThlE+e1Om0pKminXcINEqm3J/yY5g==
   dependencies:
     "@angular-devkit/core" "^19.0.0"
     ts-node "^10.0.0"
     tsconfig-paths "^4.1.0"
 
-"@angular-builders/custom-webpack@19.0.0":
-  version "19.0.0"
-  resolved "https://registry.yarnpkg.com/@angular-builders/custom-webpack/-/custom-webpack-19.0.0.tgz#7d4cb3dd69269d806523d195d01c41e63434c9b2"
-  integrity sha512-MD3N+OPl/50u+N6YJ6UwS1kOT5C6RkOsSih8F88lR/TACQCSDf0FLmJmROktNgRNADhySGnK18o874Vftyqi4w==
+"@angular-builders/custom-webpack@19.0.1":
+  version "19.0.1"
+  resolved "https://registry.yarnpkg.com/@angular-builders/custom-webpack/-/custom-webpack-19.0.1.tgz#f6296277ad0d1b0882886aa51b03c971d0f2747d"
+  integrity sha512-UXsMg0UgttwAwKAuKduwr9fUrQbN//ylaL4+qbBzdZcfEwyHYGzqprvdEgCcx0CgFKED72Z3OmY8ekNJZ5panA==
   dependencies:
-    "@angular-builders/common" "3.0.0"
+    "@angular-builders/common" "3.0.1"
     "@angular-devkit/architect" ">=0.1900.0 < 0.2000.0"
     "@angular-devkit/build-angular" "^19.0.0"
     "@angular-devkit/core" "^19.0.0"
