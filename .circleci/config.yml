@@ -34,7 +34,7 @@ jobs:
 
   deploy:
     docker:
-      - image: cimg/node:20.2
+      - image: cimg/node:22.18
     steps:
       - checkout
       - node/install-packages:
